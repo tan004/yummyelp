@@ -5,6 +5,7 @@ import SignupPage from './components/SignUpPage';
 import * as sessionActions from "./store/session";
 import { useDispatch } from "react-redux";
 import Navigation from "./components/Navigation";
+import Homepage from "./components/HomePage";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
+            <Route exact path='/'>
+              <Homepage />
+            </Route>
             <Route path='/login'>
               <LoginFormPage />
             </Route>

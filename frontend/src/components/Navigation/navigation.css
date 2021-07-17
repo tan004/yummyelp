@@ -4,7 +4,7 @@
     flex-direction: row;
     background-color: #d32323;
     color:white;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
     border-radius: 2px;
     justify-content: space-between;
@@ -23,14 +23,23 @@
     color: white;
     font-weight: bold;
     box-sizing: border-box;
-    border-left: 1px solid white ;
-    padding: 5px;
+    padding: 13px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.navbar-right__container a:hover{
+    background-color: white;
+    color: #d32323;
 }
 
 .navbar-left__container a{
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    padding: 5px 10px;
 }
 
 
@@ -38,10 +47,65 @@
     color: white;
     background-color:  #d32323;
     box-sizing: border-box;
-    border: none;
-    font-size: 25px;
-
+    border: 1px solid #d32323;
+    font-size: 32px;
 }
 .profile-button:hover{
     cursor: pointer;
+}
+
+.profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 23px;
+    color: white;
+    top: 68px;
+    background-color: rgb(112, 199, 214);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    align-items:flex-start;
+}
+.dropdown-list{
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    margin: 0px 0px 5px;
+    font-weight: bold;
+}
+.logout-button{
+    box-sizing: border-box;
+    border: 1px solid rgb(80, 170, 192);
+    border-radius: 5px;
+    background-color:rgb(80, 170, 192);
+    font-weight: bold;
+    color: white;
+    padding: 5px 30px;
+}
+
+.logout-button:hover{
+   background-color: cyan;
+   border: 1px solid cyan;
+   color: black;
+   cursor: pointer;
+}
+
+.about-me a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+.triangle{
+    font-size: 30px;
+}
+
+.fa-caret-up{
+    position: absolute;
+    top: -18px;
+    right: 10px;
+    color: rgb(112, 199, 214);
 }
