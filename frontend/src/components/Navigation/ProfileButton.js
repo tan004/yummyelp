@@ -36,7 +36,7 @@ const ProfileButton = ({ user }) => {
     return (
         <>
             <button className='profile-button' onClick={toggleMenu}>
-                <i class="far fa-address-card"></i>
+                <i className="far fa-address-card"></i>
             </button>
             {showMenu && (
                 <ul className="profile-dropdown">
