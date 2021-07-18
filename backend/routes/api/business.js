@@ -13,4 +13,6 @@ router.get('/', asyncHandler(async (req, res) => {
     return res.json(allBusiness)
 }))
 
+router.post('/')
+
 module.exports = router;

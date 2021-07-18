@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import { useDispatch } from "react-redux";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/HomePage";
+import BusinessFormPage from "./components/BusinessFormPage";
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path='/signup'>
               <SignupPage />
+            </Route>
+            <Route path='/business/new'>
+            <BusinessFormPage />
             </Route>
           </Switch>
         )}

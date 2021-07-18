@@ -9,7 +9,9 @@ const Navigation = ({ isLoaded }) => {
 
     let sessionLinks;
     if (user) {
-        sessionLinks = (<ProfileButton user={user} />)
+        sessionLinks = (
+        <ProfileButton user={user} />
+        )
     } else {
         sessionLinks = (<>
             <NavLink className='login' to="/login">Log In</NavLink>
@@ -28,6 +30,7 @@ const Navigation = ({ isLoaded }) => {
             </div>
 
             <div className='navbar-right__container'>
+            <NavLink to='/business/new'>Create business</NavLink>
             {isLoaded && sessionLinks}
             </div>
         </div>

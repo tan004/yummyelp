@@ -7,7 +7,7 @@ const load = list => ({
 })
 
 export const getBusiness = () => async dispatch => {
-    const req = await fetch(`/api/business`);
+    const req = await csrfFetch(`/api/business`);
     if(req.ok){
         const list = await req.json();
 

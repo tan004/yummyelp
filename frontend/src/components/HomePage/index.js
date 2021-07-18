@@ -20,10 +20,8 @@ const Homepage = () => {
                 (
                     <div className='business-list'>
                         <NavLink key={business.title} to={`/business/${business.id}`}>
-
                             <img src={business.imgUrl} alt={business.id} />
                             <h2 key={business.id}>{business.title}</h2>
-
                         </NavLink>
                         <p key={business.id}>{business.description}</p>
                         <li key={business.id}>{business.address}</li>

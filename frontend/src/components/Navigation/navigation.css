@@ -59,9 +59,9 @@
     flex-direction: column;
     position: absolute;
     right: 23px;
-    color: white;
+    color: #636264;
     top: 68px;
-    background-color: rgb(112, 199, 214);
+    background-color: #f7f7f7bd;
     padding: 15px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -107,5 +107,5 @@
     position: absolute;
     top: -18px;
     right: 10px;
-    color: rgb(112, 199, 214);
+    color: #ebebeb;
 }
