@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import { createBusiness } from '../../store/business'
 
 const BusinessFormPage = () => {
     const user = useSelector(state => state.session.user)
     console.log(user)
     const history = useHistory();
+    const dispacth = useDispatch();
+
     const [title,setTitle] = useState('');
     const [imgUrl,setImgUrl] =useState('');
     const [description, setDescription] = useState('');
@@ -29,7 +31,7 @@ const BusinessFormPage = () => {
         e.preventDefault();
 
         const business = {
-            id: user.id,
+            ownerId: user.id,
             title,
             imgUrl,
             description,
@@ -39,9 +41,10 @@ const BusinessFormPage = () => {
             zipCode
         }
 
-        console.log(business)
-
-        history.push('/')
+        let newBusiness = dispacth(createBusiness(business));
+        if(newBusiness){
+            history.push('/')
+        }
     }
 
     return (

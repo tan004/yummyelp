@@ -1,8 +1,9 @@
 .allbusiness{
     display: flex;
     flex-direction: row;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
-
 
 .business-list{
     display: flex;
@@ -13,4 +14,8 @@
 img{
     width: 300px;
     height: 300px;
+}
+
+.business-list a:hover{
+    background-color: #88d1f3e3;
 }
