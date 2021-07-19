@@ -26,11 +26,11 @@ router.post('/', restoreUser, requireAuth, asyncHandler(async (req, res) => {
 }))
 
 
-router.put('/:id', restoreUser, requireAuth, asyncHandler(async (req, res) => {
+router.put('/:id/edit', restoreUser, requireAuth, asyncHandler(async (req, res) => {
     const businessId = req.params.id
-    console.log('xxxxxxxxxxxxx',businessId)
-    const business = await Business.findByPk(businessId)
-//    const updated =  await Business.update(businessId, req.body)
+    console.log('0000000000000000',businessId)
+    // const business = await Business.findByPk(businessId)
+   const updated =  await Business.update(businessId, req.body)
 
     return res.json(updated);
 }))

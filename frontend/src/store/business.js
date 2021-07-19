@@ -31,7 +31,7 @@ export const getBusiness = () => async dispatch => {
 }
 
 export const getOneBusiness = (id) => async dispatch => {
-    const req = await csrfFetch(`api/business/${id}`);
+    const req = await csrfFetch(`/api/business/${id}`);
 
     if(req.ok){
         const business = await req.json();

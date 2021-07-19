@@ -8,14 +8,11 @@ const BusinessDetailPage = () =>{
     const user = useSelector(state => state.session.user)
     const { id } = useParams();
     const business = useSelector(state => state.business[id])
-    console.log(business)
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getOneBusiness(id))
     })
-
-
 
     return (<>
         <h1>{business.title}</h1>

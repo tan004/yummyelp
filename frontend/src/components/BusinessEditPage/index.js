@@ -6,6 +6,7 @@ import { updateBusiness } from "../../store/business";
 
 const BusinessEditPage = () => {
     const { id } = useParams();
+
     const user = useSelector(state => state.session.user)
     const business = useSelector(state => state.business[id])
 
