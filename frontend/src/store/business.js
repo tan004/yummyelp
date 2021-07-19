@@ -1,6 +1,8 @@
 import { csrfFetch } from "./csrf"
+
 const LOAD = 'business/LOAD'
 const ADD = 'business/ADD'
+const EDIT = 'business/EDIT'
 
 const load = list => ({
     type: LOAD,
@@ -12,6 +14,12 @@ const add = (business) => ({
     business
 })
 
+const edit = (business) => ({
+    type: EDIT,
+    business
+})
+
+
 
 export const getBusiness = () => async dispatch => {
     const req = await csrfFetch(`/api/business`);
@@ -21,6 +29,16 @@ export const getBusiness = () => async dispatch => {
         dispatch(load(list));
     }
 }
+
+export const getOneBusiness = (id) => async dispatch => {
+    const req = await csrfFetch(`api/business/${id}`);
+
+    if(req.ok){
+        const business = await req.json();
+        dispatch(add(business))
+    }
+}
+
 
 export const createBusiness = (form) => async dispatch =>{
     const {  ownerId,
@@ -53,6 +71,22 @@ export const createBusiness = (form) => async dispatch =>{
 }
 
 
+export const updateBusiness = (form) => async dispatch => {
+    const id = form.id
+
+        const req = await csrfFetch(`/api/business/${id}/edit`, {
+            method: 'PUT',
+            header: {'Content-Type': 'application/json'},
+            body: JSON.stringify(form)
+        });
+    const editBusiness = await req.json();
+    if(req.ok){
+        dispatch(edit(editBusiness));
+    }
+    return req
+}
+
+
 const initialState = { business: []}
 
 const businessReducer = (state = initialState, action) => {
@@ -71,6 +105,14 @@ const businessReducer = (state = initialState, action) => {
         case ADD: {
             const newState = {...state}
             newState.business.push(action.business)
+            return newState;
+        }
+
+        case EDIT: {
+            const newState = {...state}
+            const current = newState.business.find(el => el.id === action.business.id)
+            console.log(current)
+            newState.business[current.id] = action.business
             return newState;
         }
         default:

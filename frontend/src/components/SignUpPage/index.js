@@ -44,6 +44,7 @@ const Signup =() =>{
         try {
             let user = await dispatch(signup(form));
             if (user) {
+                //history.push('/')
                 return <Redirect to="/" />
             }
             reset();

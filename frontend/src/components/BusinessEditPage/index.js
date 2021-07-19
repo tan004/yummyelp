@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { createBusiness } from '../../store/business'
-import { stateArr, cityArr  } from "./addressArr";
+import { Link, useHistory,useParams } from "react-router-dom";
+import { stateArr, cityArr  } from "../BusinessFormPage/addressArr";
+import { updateBusiness } from "../../store/business";
 
-const BusinessFormPage = () => {
+const BusinessEditPage = () => {
+    const { id } = useParams();
     const user = useSelector(state => state.session.user)
+    const business = useSelector(state => state.business[id])
+
     const history = useHistory();
     const dispacth = useDispatch();
 
-    const [title, setTitle] = useState('');
-    const [imgUrl, setImgUrl] = useState('');
-    const [description, setDescription] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState(cityArr[0]);
-    const [state, setState] = useState(stateArr[0]);
-    const [zipCode, setZipCode] = useState('');
+    const [title, setTitle] = useState(business.title);
+    const [imgUrl, setImgUrl] = useState(business.imgUrl);
+    const [description, setDescription] = useState(business.description);
+    const [address, setAddress] = useState(business.address);
+    const [city, setCity] = useState(business.city);
+    const [state, setState] = useState(business.state);
+    const [zipCode, setZipCode] = useState(business.zipCode);
     const [errors, setErrors] = useState([]);
-
-    // const [lat, setLat] = useState(0);
-    // const [lng,setLng] = useState(0);
 
     useEffect(() => {
         const validator = []
@@ -50,11 +50,15 @@ const BusinessFormPage = () => {
     if (user === null) {
         history.push('/login')
     }
+    if(user.id !== business.ownerId){
+        history.push(`/business/${business.id}`)
+    }
 
     const handleFrom = async (e) => {
         e.preventDefault();
 
-        const business = {
+        const form = {
+            id: business.id,
             ownerId: user.id,
             title,
             imgUrl,
@@ -66,7 +70,7 @@ const BusinessFormPage = () => {
         }
 
         try {
-            let newBusiness = await dispacth(createBusiness(business));
+            let newBusiness = await dispacth(updateBusiness(form));
             if (newBusiness) {
                 history.push('/')
             }
@@ -78,7 +82,7 @@ const BusinessFormPage = () => {
 
     return (
         <>
-            <form onSubmit={handleFrom}>
+        <form onSubmit={handleFrom}>
                 <div className='errors__container'>
                     <ul>
                         {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -138,10 +142,11 @@ const BusinessFormPage = () => {
                     />
                 </label>
                 <div>
-                    <button tyep='submit'>Create</button>
+                    <button type='submit'>Update</button>
+                    <button type='submit'><Link to={`/business/${business.id}`}>Cancel</Link></button>
                 </div>
             </form>
         </>
     )
 }
-export default BusinessFormPage;
+export default BusinessEditPage;

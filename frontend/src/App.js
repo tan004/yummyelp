@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/HomePage";
 import BusinessFormPage from "./components/BusinessFormPage";
+import BusinessDetailPage from "./components/BusinessFormPage/businessDetail.js";
+import BusinessEditPage from "./components/BusinessEditPage";
 
 
 function App() {
@@ -32,8 +34,15 @@ function App() {
             <Route path='/signup'>
               <SignupPage />
             </Route>
+            <Route exact path='/business/:id/edit'>
+              <BusinessEditPage />
+            </Route>
+            <Route exact path='/business/:id'>
+              <BusinessDetailPage />
+            </Route>
+
             <Route path='/business'>
-            <BusinessFormPage />
+              <BusinessFormPage />
             </Route>
           </Switch>
         )}
