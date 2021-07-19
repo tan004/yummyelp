@@ -32,7 +32,7 @@ function App() {
             <Route path='/signup'>
               <SignupPage />
             </Route>
-            <Route path='/business/new'>
+            <Route path='/business'>
             <BusinessFormPage />
             </Route>
           </Switch>

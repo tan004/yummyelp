@@ -30,7 +30,7 @@ const Navigation = ({ isLoaded }) => {
             </div>
 
             <div className='navbar-right__container'>
-            <NavLink to='/business/new'>Create business</NavLink>
+            <NavLink to='/business'>Create business</NavLink>
             {isLoaded && sessionLinks}
             </div>
         </div>

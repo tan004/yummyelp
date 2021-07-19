@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import { useHistory, Redirect } from "react-router";
+import { Redirect } from "react-router";
 import { useDispatch,useSelector } from "react-redux";
 import { signup } from "../../store/session";
 
@@ -14,7 +14,7 @@ const Signup =() =>{
     const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
 
-    const history = useHistory();
+    // const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
 
     useEffect(() => {
@@ -42,10 +42,9 @@ const Signup =() =>{
             password
         }
         try {
-
             let user = await dispatch(signup(form));
             if (user) {
-                history.push('/')
+                return <Redirect to="/" />
             }
             reset();
         } catch (err) {
