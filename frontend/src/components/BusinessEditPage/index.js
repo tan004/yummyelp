@@ -67,7 +67,7 @@ const BusinessEditPage = () => {
         if (user === null) {
             history.push('/login')
         }
-        if (user.id !== business?.ownerId) {
+        if (user?.id !== business?.ownerId) {
             history.push(`/business/${business?.id}`)
         }
 
