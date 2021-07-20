@@ -5,7 +5,7 @@ const asyncHandler = require('express-async-handler');
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { User, Business } = require('../../db/models');
+const { User, Business, Review } = require('../../db/models');
 
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -53,5 +53,16 @@ router.get('/:id', restoreUser, asyncHandler(async(req,res)=> {
     const current = await Business.findByPk(businessId);
     return res.json(current)
 }))
+
+router.get('/:id/reviews', asyncHandler(async(req, res) => {
+    const businessId = req.params.id;
+    const reviews = await Review.findAll({
+        where: {businessId}
+    })
+    return res.json(reviews)
+}) )
+
+
+
 
 module.exports = router;
