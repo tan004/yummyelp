@@ -17,6 +17,7 @@ const Homepage = () => {
 
     return (
         <div >
+
             <div className='allbusiness'>
                 {Object.values(allBusiness).map((business) =>
                 (
@@ -25,9 +26,13 @@ const Homepage = () => {
                             <div className='cover-img'>
                                 <img src={business.imgUrl} alt={`img-${business.id}`} />
                             </div>
-                            <div className='home-title'>
+                            <div id='home-title'>
                                 <h2>{business.title}</h2>
+                                <p>review: <span>0</span></p>
+                                <p className='dollar-sign'><i className="fas fa-dollar-sign"></i><i className="fas fa-dollar-sign"></i></p>
+                                <p><i className="fas fa-check"></i>Indoor dining<i className="fas fa-check"></i>delivery<i className="fas fa-check"></i>takeout</p>
                             </div>
+
                         </NavLink>
                     </div>
                 ))}

@@ -54,6 +54,7 @@ const LoginFormPage = () => {
     }
 
     return (
+        <div className='form__container'>
         <div className='login-form__container'>
             <h1 className='header'>Login In to Yummylep</h1>
             <div className='errors__container'>
@@ -97,6 +98,7 @@ const LoginFormPage = () => {
             <div className='login-form__img'>
                 <img alt='' src='https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png'></img>
             </div>
+        </div>
         </div>
     )
 }

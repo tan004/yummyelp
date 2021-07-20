@@ -31,11 +31,11 @@ function App() {
             <Route path='/signup'>
               <SignupPage />
             </Route>
-            <Route exact path='/business/:id/edit'>
+            <Route path='/business/:id/edit'>
               <BusinessEditPage />
             </Route>
 
-            <Route exact path='/business/:id'>
+            <Route  path='/business/:id'>
               <BusinessDetailPage />
             </Route>
 
@@ -43,7 +43,7 @@ function App() {
               <BusinessFormPage />
             </Route>
 
-            <Route path='/'>
+            <Route exact path='/'>
               <Homepage />
             </Route>
           </Switch>
