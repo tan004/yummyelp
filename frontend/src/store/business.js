@@ -37,10 +37,12 @@ export const getBusiness = () => async dispatch => {
 }
 
 export const getOneBusiness = (id) => async dispatch => {
+
     const req = await csrfFetch(`/api/business/${id}`);
 
     if (req.ok) {
         const business = await req.json();
+
         dispatch(add(business))
     }
 }
@@ -121,7 +123,7 @@ const businessReducer = (state = initialState, action) => {
             }
         }
         case ADD: {
-            const newState = {...state}
+            const newState = {...state, [action.business.id]:action.business}
             return newState;
         }
 

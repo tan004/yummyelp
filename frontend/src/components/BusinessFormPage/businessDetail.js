@@ -29,21 +29,21 @@ const BusinessDetailPage = () =>{
     return (
     <div className='detailPage'>
         <div className='detail-title'>
-            <img src={business.imgUrl} alt={`img-${business.id}`} />
-            <h1 className='detail-h1'>{business.title}</h1>
+            <img src={business?.imgUrl} alt={`img-${business?.id}`} />
+            <h1 className='detail-h1'>{business?.title}</h1>
         </div>
-        <p>{business.description}</p>
-        <p>Address: {business.address} {business.city},{business.state} {business.zipCode}</p>
-        {business.ownerId === user?.id ? (
+        <p>{business?.description}</p>
+        <p>Address: {business?.address} {business?.city},{business?.state} {business?.zipCode}</p>
+        {business?.ownerId === user?.id ? (
             <div>
-                <Link to={`/business/${business.id}/edit`}>edit</Link>
+                <Link to={`/business/${business?.id}/edit`}>edit</Link>
                 <button onClick={remove}>Delete</button>
             </div>
         )
         : <button>Write a Review</button>}
 
         <h2>Reviews</h2>
-        {Object.values(reviews).map(review => <p key={review.id}>{review.answer}</p>)}
+        {Object.values(reviews).map(review => <p key={review?.id}>{review?.answer}</p>)}
     </div>
     )
 }
