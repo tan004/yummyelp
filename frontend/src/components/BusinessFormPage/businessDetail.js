@@ -11,11 +11,11 @@ const BusinessDetailPage = () =>{
 
     const business = useSelector(state => state.business[id])
     const reviews = useSelector(state => state.reviews)
-    console.log(reviews)
-    // console.log(business)
+
     const dispatch = useDispatch();
 
     const history = useHistory();
+
     useEffect(() => {
         dispatch(getOneBusiness(id))
         dispatch(getReviews(id))

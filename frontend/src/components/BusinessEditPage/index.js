@@ -28,14 +28,6 @@ const BusinessEditPage = () => {
         const [zipCode, setZipCode] = useState(business.zipCode);
         const [errors, setErrors] = useState([]);
 
-        // let title;
-        // const imgUrl = business?.imgUrl;
-        // const description = business?.description;
-        // const address = business?.address;
-        // const city = business?.city;
-        // const state = business?.state;
-        // const zipCode = business?.zipCode;
-        // const errors = [];
 
         useEffect(() => {
 
