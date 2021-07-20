@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+
 import { getBusiness } from '../../store/business';
 import './homepage.css'
 
 const Homepage = () => {
 
     const allBusiness = useSelector(state => state.business)
-    // console.log(allBusiness.business)
+    console.log(allBusiness)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const Homepage = () => {
 
 
     return (
-        <div  >
+        <div >
             <div className='allbusiness'>
                 {allBusiness.business.map((business) =>
                 (
