@@ -1,0 +1,144 @@
+
+.business-form__container{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    margin: 10%;
+    /* background-color: rgb(233, 232, 227); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-container{
+    width: 80%;
+}
+.form-container p{
+    padding: 0px 5px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.business-form__container form{
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      border-radius: 8px;
+}
+
+.business-input__container{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-text-input{
+    margin: 0px 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+.business-text-input:focus{
+    box-shadow: 1px 0px 6px rgba(0, 140, 255, 0.788);
+}
+
+.address-dropdown{
+    margin: 0px 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.zipCode-text-input{
+    margin: 0px 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.zipCode-text-input:focus{
+    box-shadow: 1px 0px 6px rgba(0, 140, 255, 0.788);
+}
+
+.business-description{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    width: 90%;
+    height: 300px;
+    padding: 10px;
+}
+
+.business-description:focus{
+    box-shadow: 1px 0px 6px rgba(0, 140, 255, 0.788);
+}
+
+.submit-button__container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 0 5px;
+    width: 100%;
+}
+.business-submit-button{
+    font: 16px Arial;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #d32323;
+    padding: 8px;
+    width: 50%;
+    border: 1px solid #d32323;
+    color: #fff;
+    border-radius: 5px;
+}
+.business-submit-button:hover{
+    background-color: #df4646e7;
+    border: 1px solid #df4646e7 ;
+    cursor: pointer;
+}
+
+.edit-form__button{
+    box-sizing: border-box;
+    padding: 0px 5px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.update-button,
+.cancel-button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #d32323;
+    border: 1px solid #d32323;
+    color: #fff;
+    border-radius: 5px;
+    width: 80px;
+    padding: 10px 0px;
+}
+
+.edit-form__button button:hover{
+    background-color: #df4646e7;
+    border: 1px solid #df4646e7 ;
+    cursor: pointer;
+}
+.cancel-button a{
+    color: black;
+}
+.cancel-button{
+    background-color: white;
+    border: 1px solid black;
+}

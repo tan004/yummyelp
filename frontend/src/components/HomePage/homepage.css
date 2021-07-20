@@ -4,11 +4,13 @@
     box-sizing: border-box;
     flex-wrap: wrap;
 }
+
 h2,a{
     text-decoration: none;
     padding: 0px;
     margin: 0px;
 }
+
 .business-list{
     display: flex;
     flex-direction: column;
@@ -19,7 +21,6 @@ h2,a{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 25px;
     align-items: center;
-
 }
 
 .cover-img img{

@@ -2,6 +2,7 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 .detail-title{
+    margin-top: 1px;
     position: relative;
     background-color: black;
     height: 500px;

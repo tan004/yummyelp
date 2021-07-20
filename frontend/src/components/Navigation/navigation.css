@@ -68,6 +68,7 @@
     box-sizing: border-box;
     border-radius: 5px;
     align-items:flex-start;
+    z-index: 100;
 }
 .dropdown-list{
     box-sizing: border-box;

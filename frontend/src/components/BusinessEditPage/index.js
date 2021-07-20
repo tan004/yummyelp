@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory,useParams } from "react-router-dom";
-import { stateArr, cityArr  } from "../BusinessFormPage/addressArr";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { stateArr, cityArr } from "../BusinessFormPage/addressArr";
 import { updateBusiness } from "../../store/business";
 
 const BusinessEditPage = () => {
@@ -51,7 +51,7 @@ const BusinessEditPage = () => {
     if (user === null) {
         history.push('/login')
     }
-    if(user.id !== business.ownerId){
+    if (user.id !== business.ownerId) {
         history.push(`/business/${business.id}`)
     }
 
@@ -82,72 +82,103 @@ const BusinessEditPage = () => {
     }
 
     return (
-        <>
-        <form onSubmit={handleFrom}>
-                <div className='errors__container'>
-                    <ul>
-                        {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                    </ul>
-                </div>
-                <label htmlFor='title'>
-                    <p>Title: </p>
-                    <input type='text'
-                        value={title}
-                        onChange={e => setTitle(e.target.value)}
-                    />
-                </label>
-                <label htmlFor='imgUrl'>
-                    <p>Image Url: </p>
-                    <input type='text'
-                        value={imgUrl}
-                        onChange={e => setImgUrl(e.target.value)}
-                    />
-                </label>
-                <label htmlFor='description'>
-                    <p>Description: </p>
-                    <textarea
-                        value={description}
-                        onChange={e => setDescription(e.target.value)}
-                    />
-                </label>
-                <label htmlFor='address'>
-                    <p>Address: </p>
-                    <input type='text'
-                        value={address}
-                        onChange={e => setAddress(e.target.value)}
-                    />
-                </label>
-                <label htmlFor='city'>
-                    <p>City: </p>
-                    <select
-                        value={city}
-                        onChange={e => setCity(e.target.value)}
-                    >
-                        {cityArr.map(city => <option key={city}>{city}</option>) }
-                    </select>
-                </label>
-                <label htmlFor='state'>
-                    <p>State: </p>
-                    <select
-                        value={state}
-                        onChange={e => setState(e.target.value)}
-                    >
-                        {stateArr.map(state => <option key={state}>{state}</option>) }
-                    </select>
-                </label>
-                <label htmlFor='zipCode'>
-                    <p>Zip Code: </p>
-                    <input type='text'
-                        value={zipCode}
-                        onChange={e => setZipCode(e.target.value)}
-                    />
-                </label>
-                <div>
-                    <button type='submit'>Update</button>
-                    <button type='submit'><Link to={`/business/${business.id}`}>Cancel</Link></button>
-                </div>
-            </form>
-        </>
+        <div className='business-form__container'>
+            <h1 className='header'>Keep your information up to date!</h1>
+            <div className='errors__container'>
+                <ul>
+                    {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+            </div>
+            <div className='form-container'>
+                <form onSubmit={handleFrom}>
+                    <div className='business-input__container'>
+                        <label htmlFor='title'>
+                            <p>Business Name: </p>
+                            <input type='text'
+                                className="business-text-input"
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div className='business-input__container'>
+                        <label htmlFor='imgUrl'>
+                            <p>Cover Image Url: </p>
+                            <input type='text'
+                                className="business-text-input"
+                                value={imgUrl}
+                                placeholder='ex: https://url.com/asdas/xxx.jpg'
+                                onChange={e => setImgUrl(e.target.value)}
+                            />
+                        </label>
+                    </div>
+
+                    <div className='business-input__container'>
+                        <label htmlFor='address'>
+                            <p>Address: </p>
+                            <input type='text'
+                                className="business-text-input"
+                                value={address}
+                                placeholder='122 market street'
+                                onChange={e => setAddress(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div className='business-input__container'>
+                        <label htmlFor='city'>
+                            <p>City: </p>
+                            <select
+                                value={city}
+                                className='address-dropdown'
+                                onChange={e => setCity(e.target.value)}
+                            >
+                                {cityArr.map(city => <option key={city}>{city}</option>)}
+                            </select>
+                        </label>
+                    </div>
+
+                    <div className='business-input__container'>
+                        <label htmlFor='state'>
+                            <p>State: </p>
+                            <select
+                                className='address-dropdown'
+                                value={state}
+                                onChange={e => setState(e.target.value)}
+                            >
+                                {stateArr.map(state => <option key={state}>{state}</option>)}
+                            </select>
+                        </label>
+                    </div>
+                    <div className='business-input__container'>
+                        <label htmlFor='zipCode'>
+                            <p>Zip Code: </p>
+                            <input type='text'
+                                className="zipCode-text-input"
+                                value={zipCode}
+                                onChange={e => setZipCode(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    <div className='business-input__container'>
+                        <label htmlFor='description'>
+                            <p>Description: </p>
+                            <textarea
+                                value={description}
+                                placeholder='Tell the guests about your story!'
+                                className='business-description'
+                                onChange={e => setDescription(e.target.value)}
+                            />
+                        </label>
+                    </div>
+
+                    <div className='edit-form__button'>
+                        <button className='update-button' type='submit'>Update</button>
+                        <button className='cancel-button' type='submit'><Link to={`/business/${business.id}`}>Cancel</Link></button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     )
 }
 export default BusinessEditPage;
