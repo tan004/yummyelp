@@ -25,7 +25,6 @@ router.post('/', restoreUser, requireAuth, asyncHandler(async (req, res) => {
     return res.json(business);
 }))
 
-
 router.put('/:id/edit', restoreUser, requireAuth, asyncHandler(async (req, res) => {
     const businessId = req.params.id
 
@@ -38,7 +37,6 @@ router.put('/:id/edit', restoreUser, requireAuth, asyncHandler(async (req, res) 
     }
     const updatedBusiness = await business.update(updated)
 //    const updated =  await Business.update(businessId, req.body)
-
     return res.json(updatedBusiness);
 }))
 

@@ -34,6 +34,9 @@ const BusinessDetailPage = () =>{
             </div>
         )
         : <button>Write a Review</button>}
+
+        <h2>Reviews</h2>
+        <div></div>
     </div>
     )
 }
