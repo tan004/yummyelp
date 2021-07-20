@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { getOneBusiness, removeBusiness } from "../../store/business";
-
+import './businessDetail.css';
 
 const BusinessDetailPage = () =>{
     const user = useSelector(state => state.session.user)
@@ -19,11 +19,11 @@ const BusinessDetailPage = () =>{
         history.push('/');
     }
 
-    return (<>
-        <h1>{business.title}</h1>
-
-        <div>
+    return (
+    <div className='detailPage'>
+        <div className='detail-title'>
             <img src={business.imgUrl} alt={`img-${business.id}`} />
+             <h1 className='detail-h1'>{business.title}</h1>
         </div>
         <p >{business.description}</p>
         <p >Address: {business.address} {business.city},{business.state} {business.zipCode}</p>
@@ -33,8 +33,8 @@ const BusinessDetailPage = () =>{
                 <button onClick={remove}>Delete</button>
             </div>
         )
-        : ''}
-    </>
+        : <button>Write a Review</button>}
+    </div>
     )
 }
 
