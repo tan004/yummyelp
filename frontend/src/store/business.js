@@ -106,7 +106,7 @@ export const removeBusiness = (id) => async dispatch => {
 }
 
 
-const initialState = { business: [] }
+const initialState = {}
 
 const businessReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -118,12 +118,10 @@ const businessReducer = (state = initialState, action) => {
             return {
                 ...allBusiness,
                 ...state,
-                business: action.list
             }
         }
         case ADD: {
-            const newState = { ...state }
-            newState.business.push(action.business)
+            const newState = {...state}
             return newState;
         }
 

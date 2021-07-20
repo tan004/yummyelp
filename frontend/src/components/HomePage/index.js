@@ -8,7 +8,6 @@ import './homepage.css'
 const Homepage = () => {
 
     const allBusiness = useSelector(state => state.business)
-    console.log(allBusiness)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -19,7 +18,7 @@ const Homepage = () => {
     return (
         <div >
             <div className='allbusiness'>
-                {allBusiness.business.map((business) =>
+                {Object.values(allBusiness).map((business) =>
                 (
                     <div key={business.id} className='business-list'>
                         <NavLink to={`/business/${business.id}`}>
