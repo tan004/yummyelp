@@ -1,51 +1,35 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Businesses', {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ownerId: {
+      userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model:'Users' }
+
+        references: { model:'Users'}
       },
-      title: {
+      businessId: {
         allowNull: false,
-        type: Sequelize.STRING(100)
+        type: Sequelize.INTEGER,
+        references: { model: 'Businesses'}
       },
-      imgUrl: {
+      rating: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.DECIMAL(2,1)
       },
-      description: {
+      answer: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      address: {
-        allowNull: false,
-        type: Sequelize.STRING(100)
-      },
-      city: {
-        allowNull: false,
-        type: Sequelize.STRING(50)
-      },
-      state: {
-        allowNull: false,
-        type: Sequelize.STRING(50)
-      },
-      zipCode: {
-        allowNull: false,
-        type: Sequelize.STRING(10)
-      },
-      lat: {
-        type: Sequelize.DECIMAL
-      },
-      lng: {
-        type: Sequelize.DECIMAL
+      liked: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
@@ -60,6 +44,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Businesses');
+    return queryInterface.dropTable('Reviews');
   }
 };

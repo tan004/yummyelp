@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 20]
+        len: [4, 6]
       }
     },
     lat: {
@@ -66,7 +66,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Business.associate = function(models) {
     // associations can be defined here
-    Business.belongsTo(models.User, {foreignKey: 'ownerId'});
+    Business.belongsTo(models.User, { foreignKey: 'ownerId'});
+    Business.hasMany(models.Review, { foreignKey: 'businessId'})
   };
   return Business;
 };
