@@ -81,10 +81,12 @@
     cursor: pointer;
 }
 
-.login-form__img{
+.login-form__img img{
     position: fixed;
     left: 800px;
-    bottom: 250px;
+    bottom: 300px;
+    width: 350px;
+    height: 300px;
 }
 
 .header{

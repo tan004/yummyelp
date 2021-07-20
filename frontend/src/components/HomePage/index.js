@@ -22,15 +22,13 @@ const Homepage = () => {
                 (
                     <div key={business.id} className='business-list'>
                         <NavLink to={`/business/${business.id}`}>
-                            <div>
+                            <div className='cover-img'>
                                 <img src={business.imgUrl} alt={`img-${business.id}`} />
                             </div>
-                            <div>
+                            <div className='home-title'>
                                 <h2>{business.title}</h2>
                             </div>
                         </NavLink>
-                        <p >{business.description}</p>
-                        <p >Address: {business.address} {business.city},{business.state} {business.zipCode}</p>
                     </div>
                 ))}
             </div>
