@@ -49,7 +49,7 @@ const BusinessDetailPage = () =>{
                 <button onClick={remove}>Delete</button>
             </div>
         )
-        : <button onClick={() => setShowReviewForm(true) }>Write a Review</button>}
+        : <button disabled={!user ? true: false} onClick={() => setShowReviewForm(true) }>Write a Review</button>}
             <div>
                 {content}
             </div>
