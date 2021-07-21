@@ -115,6 +115,7 @@ router.get('/:id', restoreUser, asyncHandler(async (req, res) => {
 router.get('/:id/reviews', asyncHandler(async (req, res) => {
     const businessId = req.params.id;
     const reviews = await Review.findAll({
+        include: User,
         where: { businessId },
     })
     return res.json(reviews)

@@ -6,13 +6,13 @@ import { getReviews } from "../../store/review";
 import ReviewFormPage from "../ReviewFormPage";
 import './businessDetail.css';
 
-const BusinessDetailPage = () =>{
+const BusinessDetailPage = () => {
     const user = useSelector(state => state.session.user)
     const { id } = useParams();
 
     const business = useSelector(state => state.business[id])
     const reviews = useSelector(state => state.reviews)
-    const [showReviewForm,setShowReviewForm] = useState(false)
+    const [showReviewForm, setShowReviewForm] = useState(false)
     const dispatch = useDispatch();
 
     const history = useHistory();
@@ -21,42 +21,49 @@ const BusinessDetailPage = () =>{
         dispatch(getOneBusiness(id))
         dispatch(getReviews(id))
         setShowReviewForm(false)
-    },[dispatch,id])
+    }, [dispatch, id])
 
-    const remove = () =>{
+    const remove = () => {
         dispatch(removeBusiness(business.id))
         history.push('/');
     }
-    console.log(business)
+
 
     let content = null;
-    if(showReviewForm && user && user.id !== business.ownerId ){
+    if (showReviewForm && user && user.id !== business.ownerId) {
         content = (
-            <ReviewFormPage hideForm={()=> setShowReviewForm(false)} />
+            <ReviewFormPage hideForm={() => setShowReviewForm(false)} />
         )
     }
 
     return (
-    <div className='detailPage'>
-        <div className='detail-title'>
-            <img src={business?.imgUrl} alt={`img-${business?.id}`} />
-            <h1 className='detail-h1'>{business?.title}</h1>
-        </div>
-        <p>{business?.description}</p>
-        <p>Address: {business?.address} {business?.city},{business?.state} {business?.zipCode}</p>
-        {business?.ownerId === user?.id ? (
-            <div>
-                <Link to={`/business/${business?.id}/edit`}>edit</Link>
-                <button onClick={remove}>Delete</button>
+        <div className='detailPage'>
+            <div className='detail-title'>
+                <img src={business?.imgUrl} alt={`img-${business?.id}`} />
+                <h1 className='detail-h1'>{business?.title}</h1>
             </div>
-        )
-        : <button disabled={!user ? true: false} onClick={() => setShowReviewForm(true) }>Write a Review</button>}
+            <p>{business?.description}</p>
+            <p>Address: {business?.address} {business?.city},{business?.state} {business?.zipCode}</p>
+            {business?.ownerId === user?.id ? (
+                <div>
+                    <Link to={`/business/${business?.id}/edit`}>edit</Link>
+                    <button onClick={remove}>Delete</button>
+                </div>
+            )
+                : <button disabled={!user ? true : false} onClick={() => setShowReviewForm(true)}>Write a Review</button>}
             <div>
                 {content}
             </div>
-        <h2>Reviews</h2>
-        {Object.values(reviews).map(review => <p key={review?.id}>{review?.answer}</p>)}
-    </div>
+            <h2>Reviews</h2>
+            {Object.values(reviews).map(review => (
+                <div key={review.id} className='review-detail'>
+                    <span>Anonymous</span>
+                    {review.liked ? <i id={`${review.liked}`} className="fas fa-thumbs-up"></i> : <i className="far fa-thumbs-up"></i>}
+                    <p>rating: {review.rating}</p>
+                    <p key={review?.id}>{review?.answer}</p>
+                </div>
+            ))}
+        </div>
     )
 }
 

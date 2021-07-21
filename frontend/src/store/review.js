@@ -33,6 +33,7 @@ export const getReviews = (id) => async dispatch => {
 
     if(req.ok) {
         const reviews = await req.json()
+        // console.log(reviews)
         dispatch(load(reviews, +id))
     }
 }
