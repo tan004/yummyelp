@@ -48,6 +48,22 @@ const LoginFormPage = () => {
         }
     }
 
+    const demoUser = async () => {
+        const form ={
+            credential: 'demo',
+            password: 'password'
+        }
+
+        let user = await dispatch(login(form));
+            if (user === undefined) {
+                throw Error('please login first')
+            }else{
+
+                history.push('/')
+            }
+
+    }
+
     const reset = () => {
         setUsername('')
         setPassword('')
@@ -93,6 +109,7 @@ const LoginFormPage = () => {
 
             </div>
             </form>
+            <button onClick={demoUser} className='demo-button'>Demo User</button>
             <small>New to Yummylep? <Link to='/signup'>Sign up</Link></small>
 
             <div className='login-form__img'>

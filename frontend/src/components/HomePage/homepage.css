@@ -4,10 +4,11 @@ html{
 
 .allbusiness{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     box-sizing: border-box;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 h2,a{

@@ -95,3 +95,22 @@
 .header{
     color: #d32323;
 }
+
+.demo-button{
+    font: 16px Arial;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #2384d3;
+    padding: 8px 8px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    width: 70%;
+    border: 1px solid #2384d3;
+    color: #fff;
+    border-radius: 5px;
+}
+.demo-button:hover{
+    background-color: #2384d3cc;
+    border: 1px solid #2384d3cc ;
+    cursor: pointer;
+}

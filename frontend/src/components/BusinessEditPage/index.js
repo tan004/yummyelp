@@ -28,7 +28,6 @@ const BusinessEditPage = () => {
         const [zipCode, setZipCode] = useState(business.zipCode);
         const [errors, setErrors] = useState([]);
 
-
         useEffect(() => {
 
             const validator = []

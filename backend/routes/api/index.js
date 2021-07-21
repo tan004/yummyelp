@@ -8,6 +8,7 @@ const { restoreUser } = require('../../utils/auth.js');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const businessRouter = require('./business.js');
+const reviewsRouter = require('./review.js')
 
 router.post('/test', (req, res) => {
     res.json({ requestBody: req.body})
@@ -18,5 +19,7 @@ router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
 router.use('/business', businessRouter);
+
+router.use('/reviews', reviewsRouter);
 
 module.exports = router;
