@@ -14,7 +14,7 @@ const Homepage = () => {
     const reviews = useSelector(state => state.reviews)
 
     const reviewArr = Object.values(reviews)
-    console.log(reviewArr)
+
 
     const dispatch = useDispatch();
 
@@ -39,7 +39,7 @@ const Homepage = () => {
                                 <h2>{business.title}</h2>
                                 <p>review: {reviewArr.filter(review => review.businessId === business.id) ?reviewArr.filter(review => review.businessId === business.id).length: 0}</p>
                                 <p className='dollar-sign'><i className="fas fa-dollar-sign"></i><i className="fas fa-dollar-sign"></i></p>
-                                <p><i className="fas fa-check"></i>Indoor dining<i className="fas fa-check"></i>delivery<i className="fas fa-check"></i>takeout</p>
+                                <p><i className="fas fa-check"></i>Indoor dining<i className="fas fa-check"></i>Delivery<i className="fas fa-check"></i>Takeout</p>
                             </div>
 
                         </NavLink>

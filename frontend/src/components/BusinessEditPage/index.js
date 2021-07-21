@@ -15,7 +15,7 @@ const BusinessEditPage = () => {
 
     useEffect(() => {
         dispatch(getOneBusiness(id))
-    }, [dispatch])
+    }, [dispatch,id])
 
     const BusinessEdit = () => {
 
