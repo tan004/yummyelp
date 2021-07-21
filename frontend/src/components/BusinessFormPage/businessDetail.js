@@ -27,6 +27,7 @@ const BusinessDetailPage = () =>{
         dispatch(removeBusiness(business.id))
         history.push('/');
     }
+    console.log(business)
 
     let content = null;
     if(showReviewForm && user && user.id !== business.ownerId ){

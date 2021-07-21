@@ -31,7 +31,6 @@ export const getBusiness = () => async dispatch => {
     const req = await csrfFetch(`/api/business`);
     if (req.ok) {
         const list = await req.json();
-
         dispatch(load(list));
     }
 }
@@ -114,7 +113,7 @@ const businessReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD: {
             const allBusiness = {};
-            action.list.forEach(business => {
+            action.list.rows.forEach(business => {
                 allBusiness[business.id] = business;
             });
             return {
