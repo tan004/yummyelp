@@ -8,6 +8,7 @@ const ReviewFormPage = ({ hideForm }) => {
     const [answer, setAnswer] = useState('');
     const [liked, setLiked] = useState(false);
     const [rating, setRating] = useState(0)
+    const [errors, setErrors] = useState([])
 
     const dispatch = useDispatch();
     const business = useSelector(state => state.business[id])
@@ -24,9 +25,15 @@ const ReviewFormPage = ({ hideForm }) => {
             liked,
         }
 
-        let review = await dispatch(addReview(form, business.id))
-        if(review){
-            hideForm()
+        try{
+
+            let review = await dispatch(addReview(form, business.id))
+            if(review){
+                hideForm()
+            }
+        }catch(err){
+            const data = await err.json()
+            setErrors(data.errors)
         }
     }
     const handleCancelClick = (e) => {
@@ -37,14 +44,16 @@ const ReviewFormPage = ({ hideForm }) => {
 
     return (
         <div>
-
-            <h1>Review page</h1>
+            <div className='errors__container'>
+                <ul>
+                    {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+            </div>
             <form onSubmit={handleForm}>
                 <label htmlFor='rating'>
-                    <p>Rate: </p>
+                    <p>Overall Rating: </p>
                     <input
                     type='number'
-                    // placeholder='1-5, ex: 3.5'
                     value= {rating}
                     onChange={e => setRating(e.target.value)}
                     />

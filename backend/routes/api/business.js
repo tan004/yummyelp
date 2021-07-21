@@ -10,34 +10,49 @@ const { User, Business, Review } = require('../../db/models');
 const validateform = [
     check('title')
     .exists({ checkFalsy: true })
-    .notEmpty()
     .withMessage('Please provide your business name with length between 3 to 100 characters.'),
+
     check('imgUrl')
-    .notEmpty()
+    .exists({checkFalsy: true})
     .withMessage('Please provide your cover picture Url!'),
+
     check('description')
     .exists({checkFalsy: true})
-    .notEmpty()
     .withMessage('Please provide your business description!'),
+
     check('address')
     .exists({checkFalsy: true})
-    .notEmpty()
     .withMessage('Please provide your business address!'),
+
     check('city')
     .exists({checkFalsy: true})
-    .notEmpty()
     .withMessage('Please select the city where your business located at!'),
+
     check('state')
     .exists({checkFalsy: true})
-    .notEmpty()
     .withMessage('Please select the state where your business located at!'),
+
     check('zipCode')
     .exists({checkFalsy: true})
-    .notEmpty()
+    .isLength({
+        max: 6
+    })
     .withMessage('Please provide the valid zipCode where your business located at!'),
     handleValidationErrors
 ]
 
+
+const validateReview = [
+    check('rating')
+    .exists({ checkFalsy: true })
+    .isFloat({min:1, max: 5})
+    .withMessage('Please provide an overall rating for the business. (1 - 5, ex: 3.5) '),
+
+    check('answer')
+    .exists({checkFalsy: true})
+    .withMessage(`Please describe what you like or what you don't like for this business.`),
+    handleValidationErrors
+]
 
 router.get('/', asyncHandler(async (req, res) => {
     const allBusiness = await Business.findAll();
@@ -93,7 +108,7 @@ router.get('/:id/reviews', asyncHandler(async(req, res) => {
     return res.json(reviews)
 }) )
 
-router.post('/:id/reviews',restoreUser,requireAuth, asyncHandler(async(req,res)=> {
+router.post('/:id/reviews',restoreUser,requireAuth, validateReview, asyncHandler(async(req,res)=> {
     const { userId, businessId, rating, answer, liked } = req.body
 
     const newReview = await Review.create({
