@@ -67,7 +67,7 @@ router.get('/', asyncHandler(async (req, res) => {
     const allBusiness = await Business.findAndCountAll({
         include: Review,
     });
-    console.log(allBusiness)
+
     return res.json(allBusiness);
 }))
 

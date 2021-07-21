@@ -32,7 +32,7 @@ export const getAllReviews = () => async dispatch => {
 
     if(req.ok){
         const reviews = await req.json()
-        // console.log(reviews)
+
         dispatch(get(reviews))
     }
 }
