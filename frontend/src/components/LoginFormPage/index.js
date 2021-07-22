@@ -112,10 +112,10 @@ const LoginFormPage = () => {
             <button onClick={demoUser} className='demo-button'>Demo User</button>
             <small>New to Yummylep? <Link to='/signup'>Sign up</Link></small>
 
-            <div className='login-form__img'>
-                <img alt='' src='https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png'></img>
-            </div>
         </div>
+            <div className='login-form__img'>
+                <img className='login-img' alt='' src='https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png'></img>
+            </div>
         </div>
     )
 }

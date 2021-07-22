@@ -10,7 +10,7 @@ const Navigation = ({ isLoaded }) => {
     let sessionLinks;
     if (user) {
         sessionLinks = (
-        <ProfileButton user={user} />
+            <ProfileButton user={user} />
         )
     } else {
         sessionLinks = (<>
@@ -21,19 +21,22 @@ const Navigation = ({ isLoaded }) => {
 
     return (
         <>
-        <div className="navbar__container">
-            <div className="about-me">
-                <a href='https://github.com/tan004'>About me</a>
-            </div>
-            <div className='navbar-left__container'>
-            <NavLink exact to="/">Yummyelp</NavLink>
-            </div>
+            <div className="navbar__container">
+                <div className='navbar-left__container'>
+                    <NavLink exact to="/">Yummyelp</NavLink>
+                </div>
 
-            <div className='navbar-right__container'>
-            <NavLink to='/business'>Create business</NavLink>
-            {isLoaded && sessionLinks}
+                <div className='search-div'>
+                    <input className='search-bar' type='text' placeholder='search bar under-construction'/>
+                    <button className='search-button'>search</button>
+                </div>
+
+                <div className='navbar-right__container'>
+                    <a className="about-me" href='https://github.com/tan004'>About me</a>
+                    <NavLink className='create' to='/business'>Create business</NavLink>
+                    {isLoaded && sessionLinks}
+                </div>
             </div>
-        </div>
         </>
     )
 }

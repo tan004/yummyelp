@@ -60,7 +60,7 @@ const Signup =() =>{
         setPassword('')
     }
     return (
-        <>
+        <div className='form__container'>
            <div className='login-form__container'>
             <h1 className='header'>Signup for Yummylep</h1>
             <div className='errors__container'>
@@ -121,13 +121,12 @@ const Signup =() =>{
             </form>
             <small>Already have an account?<Link to='/login'>Log in</Link></small>
 
+        </div>
 
             <div className='login-form__img'>
-                <img src='https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png' alt=''></img>
+                <img className='login-img'src='https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png' alt=''></img>
             </div>
-
         </div>
-        </>
     )
 }
 

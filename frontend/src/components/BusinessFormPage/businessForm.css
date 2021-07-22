@@ -4,13 +4,11 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 1px solid black;
     border-radius: 5px;
     align-items: center;
     width: 80%;
     padding: 20px;
     margin: 10%;
-    /* background-color: rgb(233, 232, 227); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

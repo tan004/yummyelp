@@ -98,7 +98,7 @@ const BusinessDetailPage = () => {
             <div className='detail-owner-div'>
             {business?.ownerId === user?.id ? (
                 <div className='edit-link__container'>
-                    <Link className='edit-link' to={`/business/${business?.id}/edit`}>Edit Review</Link>
+                    <Link className='edit-link' to={`/business/${business?.id}/edit`}>Edit Business</Link>
                     <button className='add-photo' onClick={remove}>Delete</button>
                 </div>
             )
@@ -112,11 +112,17 @@ const BusinessDetailPage = () => {
 
             <h2>Reviews</h2>
             <div className='review__outer-div'>
-                {reviewArr.map(review => (
+                {!reviewArr.length ?  (<h3>
+                    Put the 1ST review here!
+                </h3>) :
+
+                reviewArr.map(review => (
                     <div key={review.id} className='review__container'>
                         <ShowReview review={review} hideForm={() => setShowReviewForm(false)}/>
                     </div>
-                ))}
+                ))
+
+                }
             </div>
         </div >
     )
