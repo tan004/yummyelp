@@ -7,6 +7,20 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { User, Business, Review } = require('../../db/models');
 
+
+const validateReview = [
+    check('rating')
+        .exists({ checkFalsy: true })
+        .isFloat({ min: 1, max: 5 })
+        .withMessage('Please provide an overall rating for the business. (1 - 5, ex: 3.5) '),
+
+    check('answer')
+        .exists({ checkFalsy: true })
+        .withMessage(`Please describe what you like or what you don't like for this business.`),
+    handleValidationErrors
+]
+
+
 router.get('/', asyncHandler(async(req,res)=>{
     const reviews  = await Review.findAll({
         order: [['updatedAt','DESC']]
@@ -14,7 +28,7 @@ router.get('/', asyncHandler(async(req,res)=>{
     return res.json(reviews)
 }))
 
-router.put('/:reviewId', requireAuth,restoreUser, asyncHandler(async(req,res)=> {
+router.put('/:reviewId', restoreUser, requireAuth, validateReview, asyncHandler(async(req,res)=> {
     const reviewId = req.params.reviewId;
 
     const review = await Review.findByPk(reviewId)

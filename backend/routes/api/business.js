@@ -42,7 +42,7 @@ const validateform = [
 ]
 
 
-const validateReview = [
+ const validateReview = [
     check('rating')
         .exists({ checkFalsy: true })
         .isFloat({ min: 1, max: 5 })

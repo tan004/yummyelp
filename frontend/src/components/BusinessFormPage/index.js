@@ -128,7 +128,7 @@ const BusinessFormPage = () => {
                                 className='address-dropdown'
                                 onChange={e => setCity(e.target.value)}
                             >
-                                {cityArr.map(city => <option key={city}>{city}</option>)}
+                                {cityArr.map(city => <option value={city} key={city}>{city}</option>)}
                             </select>
                         </label>
                     </div>
@@ -141,7 +141,7 @@ const BusinessFormPage = () => {
                                 value={state}
                                 onChange={e => setState(e.target.value)}
                             >
-                                {stateArr.map(state => <option key={state}>{state}</option>)}
+                                {stateArr.map(state => <option value={state} key={state}>{state}</option>)}
                             </select>
                         </label>
                     </div>
