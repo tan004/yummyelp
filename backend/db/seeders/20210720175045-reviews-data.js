@@ -10,7 +10,7 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Reviews', [
         {
-          userId: 1,
+          userId: 6,
           businessId: 2,
           rating: 4,
           answer: `Cool spot for an interesting Japanese dining experience! There are a bunch of booths where you and your party can sit inside with shoes off. The tables are set up so that you can sit on your knees at the table; I assume this is a Japanese sitting style. There's a hole under the table so you can also sit like normal if you wish.`,
@@ -59,7 +59,7 @@ module.exports = {
           liked: true,
         },
         {
-          userId: 4,
+          userId: 5,
           businessId: 6,
           rating: 5,
           answer: 'This is super good! You have to give it a try!',
