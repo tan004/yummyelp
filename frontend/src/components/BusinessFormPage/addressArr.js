@@ -1,4 +1,4 @@
-export const stateArr = ['Alabama', 'Alaska', 'American Samoa', 'Arizona',
+export const stateArr = ['','Alabama', 'Alaska', 'American Samoa', 'Arizona',
     'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
     'District of Columbia', 'Federated States of Micronesia', 'Florida',
     'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
@@ -10,7 +10,7 @@ export const stateArr = ['Alabama', 'Alaska', 'American Samoa', 'Arizona',
     'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Island',
     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
-export const cityArr = ["Aberdeen", "Abilene", "Akron", "Albany",
+export const cityArr = ['',"Aberdeen", "Abilene", "Akron", "Albany",
     "Albuquerque", "Alexandria", "Allentown", "Amarillo",
     "Anaheim", "Anchorage", "Ann Arbor", "Antioch", "Apple Valley",
     "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta",

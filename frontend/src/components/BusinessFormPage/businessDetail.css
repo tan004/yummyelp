@@ -11,7 +11,7 @@ a{
     flex-direction: column;
     width: 90%;
     align-items: center;
-    margin: 0px 35px;
+    margin: 0px 35px 5%;
 }
 .detail-title{
     margin-top: 1px;
@@ -21,7 +21,42 @@ a{
     max-width: 1000px;
 }
 
+.business-info{
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+.about-us{
+    width: 84px;
+}
+
+.description{
+    padding: 0px 20px;
+    line-height: 30px;
+    /* font-weight: bold; */
+    font-size: 17px;
+    color: #2B273C;
+    height: 120px;
+    overflow-y: auto;
+    border-radius: 2px;
+}
+
+.address{
+    padding: 0px 20px;
+    font-weight: bold;
+    color: #00838F;
+}
+
+.city-state{
+    padding: 0px 20px;
+    font-weight: bold;
+}
+.address p{
+    margin: 0px;
+}
 .detail-h1{
+
     position: absolute;
     bottom: 30px;
     left: 40px;
@@ -35,8 +70,10 @@ a{
     height: 100%;
     opacity: 0.7;
   }
+
   .show-edit-form{
-      max-width: 580px;
+      min-width: 600px;
+      max-width: 600px;
   }
 
 .add-review{
@@ -81,6 +118,7 @@ a{
 }
 
 .edit-button{
+
     font: 16px Arial;
     font-weight: bold;
     font-weight: none;
@@ -121,6 +159,26 @@ a{
 
 .detail-owner-div{
     display: flex;
+    margin: 10px 10px;
+    padding: 10px 10px 20px;
+    width: 80%;
+    justify-content: center;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.review-h2{
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.no-review{
+    margin:0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(145, 145, 145, 0.541);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 .edit-link{
@@ -146,4 +204,33 @@ a{
 
 .edit-link__container{
     display: flex;
+}
+
+.review-name__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review-name{
+    margin: 0px;
+    padding: 5px;
+    font-weight: 600;
+}
+.review-answer{
+    padding: 0px 20px;
+    line-height: 25px;
+}
+
+.review-rating{
+    padding: 0px 3px;
+
+}
+
+.review-buttons{
+    min-width: 670px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }

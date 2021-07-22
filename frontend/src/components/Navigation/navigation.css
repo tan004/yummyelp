@@ -25,10 +25,10 @@
 }
 
 .navbar-left__container a{
+    font-family: 'Dancing Script', cursive;
     text-decoration: none;
     color: white;
-    font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     box-sizing: border-box;
     padding: 5px 10px;
 }

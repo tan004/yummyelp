@@ -7,16 +7,17 @@ import { updateReview } from '../../store/review'
 const ReviewEditPage = ({ reviewId, hideForm }) => {
 
     const { id } = useParams()
-    const [answer, setAnswer] = useState('');
-    const [liked, setLiked] = useState(false);
-    const [rating, setRating] = useState(0)
-    const [errors, setErrors] = useState([])
+
 
     const dispatch = useDispatch();
     const business = useSelector(state => state.business[id])
     const user = useSelector(state => state.session.user)
     const review = useSelector(state => state.reviews[reviewId])
 
+    const [answer, setAnswer] = useState(review.answer);
+    const [liked, setLiked] = useState(review.liked);
+    const [rating, setRating] = useState(review.rating)
+    const [errors, setErrors] = useState([])
 
     const handleForm = async (e) => {
         e.preventDefault()

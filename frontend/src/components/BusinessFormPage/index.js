@@ -141,7 +141,6 @@ const BusinessFormPage = () => {
                                 value={state}
                                 onChange={e => setState(e.target.value)}
                             >
-                                <option key=''>--please select a state--</option>
                                 {stateArr.map(state => <option key={state}>{state}</option>)}
                             </select>
                         </label>
