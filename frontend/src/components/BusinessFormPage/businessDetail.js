@@ -40,7 +40,7 @@ const BusinessDetailPage = () => {
         )
     }
 
-    const ShowReview = ({ review, hideForm }) => {
+    const ShowReview = ({ review }) => {
         const [EditReviewId, setEditReviewId] = useState(null)
 
         useEffect(() => {
@@ -89,19 +89,23 @@ const BusinessDetailPage = () => {
                 <img src={business?.imgUrl} alt={`img-${business?.id}`} />
                 <h1 className='detail-h1'>{business?.title}</h1>
             </div>
-            <p>{business?.description}</p>
-            <p>Address: {business?.address} {business?.city},{business?.state} {business?.zipCode}</p>
 
+            <div>
+                <p>{business?.description}</p>
+                <p>Address: {business?.address} {business?.city},{business?.state} {business?.zipCode}</p>
+            </div>
+
+            <div className='detail-owner-div'>
             {business?.ownerId === user?.id ? (
-                <div>
-                    <Link to={`/business/${business?.id}/edit`}>edit</Link>
-                    <button onClick={remove}>Delete</button>
+                <div className='edit-link__container'>
+                    <Link className='edit-link' to={`/business/${business?.id}/edit`}>Edit Review</Link>
+                    <button className='add-photo' onClick={remove}>Delete</button>
                 </div>
             )
-                : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i class="far fa-star"></i> Write a Review</button>}
+                : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i className="far fa-star"></i> Write a Review</button>}
 
-            <button className='add-photo' onClick={() => !user ? history.push('/login') : ''}><i class="fas fa-camera"></i> add Photo</button>
-
+            <button className='add-photo' onClick={() => !user ? history.push('/login') : ''}><i className="fas fa-camera"></i> add Photo</button>
+                </div>
             <div className='add-review__container'>
                 {content}
             </div>

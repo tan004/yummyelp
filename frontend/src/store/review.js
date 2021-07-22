@@ -42,7 +42,6 @@ export const getReviews = (id) => async dispatch => {
 
     if(req.ok) {
         const reviews = await req.json()
-
         dispatch(load(reviews, +id))
     }
 }
@@ -92,9 +91,10 @@ export const deleteReview = (id) => async dispatch => {
 const initialState = {};
 
 const reviewsReducer = (state= initialState, action) => {
-    let allReviews = {}
+
     switch (action.type) {
         case LOAD_REVIEWS: {
+            const allReviews = {};
 
             const selected = action.reviews.filter(review => review.businessId === action.businessId);
 
@@ -120,6 +120,7 @@ const reviewsReducer = (state= initialState, action) => {
             const newState = {...state, [action.review.id]: action.review}
             return newState
         }
+
         case REMOVE_REVIEW: {
             const newState = {...state}
             delete newState[action.id]
