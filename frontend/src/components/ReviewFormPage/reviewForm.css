@@ -1,0 +1,128 @@
+#true{
+    color: rgba(255, 0, 0, 0.801);
+    padding-left: 5px;
+}
+
+.review-detail{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(145, 145, 145, 0.541);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.review__container{
+    display: flex;
+    flex-direction: column;
+}
+.edit-review__container{
+    display: flex;
+    border-bottom: 1px solid rgba(145, 145, 145, 0.541);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items:flex-start;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-review__container{
+    display: flex;
+}
+
+.review-form{
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+}
+/* .form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} */
+
+.rating-div{
+    margin: 10px 10px 0px;
+    padding-right: 5px;
+    display: flex;
+    align-items: flex-end;
+}
+.rating-span{
+    font-weight: bold;
+}
+.rating-input{
+    width: 45px;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.liked-div{
+    margin: 10px 10px 0px;
+    padding-right: 5px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+}
+.liked-input{
+
+}
+
+.answer-div{
+    margin: 10px 10px 0px;
+    padding-right: 5px;
+}
+.answer-textarea{
+    width: 500px;
+    height: 100px;
+    border: 1px solid rgba(187,186,192,1)
+}
+
+.review-button-div{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 0px;
+    padding: 0px 5px;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.review-post{
+    font: 16px Arial;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F40D15;
+    padding: 8px;
+    width: 80px;
+    border: 1px solid #F40D15;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.review-post:hover{
+    background-color: #df4646e7;
+    border: 1px solid #df4646e7 ;
+    cursor: pointer;
+}
+
+.review-cancel{
+    font: 16px Arial;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: rgba(43,39,60,1);
+    padding: 8px;
+    width: 80px;
+    border: 1px solid rgba(187,186,192,1);
+    border-radius: 5px;
+}
+
+.review-cancel:hover{
+    background-color: #E0E0E0;
+    cursor: pointer;
+}

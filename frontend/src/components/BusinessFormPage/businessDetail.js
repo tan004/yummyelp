@@ -25,14 +25,12 @@ const BusinessDetailPage = () => {
         dispatch(getOneBusiness(id))
         dispatch(getReviews(id))
         setShowReviewForm(false)
-
     }, [dispatch, id])
 
     const remove = () => {
         dispatch(removeBusiness(business.id))
         history.push('/');
     }
-
 
 
     let content = null;
@@ -42,44 +40,46 @@ const BusinessDetailPage = () => {
         )
     }
 
-    const ShowReview = ({review}) => {
+    const ShowReview = ({ review, hideForm }) => {
         const [EditReviewId, setEditReviewId] = useState(null)
 
         useEffect(() => {
             setEditReviewId(null)
-        },[])
+        }, [])
 
+        let editpage=null;
 
-        let editpage = null;
         if (EditReviewId) {
-        editpage = (
-            <ReviewEditPage reviewId={EditReviewId} hideForm={() => setEditReviewId(null)} />
-        )
-    }
+            editpage = (
+                <ReviewEditPage reviewId={EditReviewId} hideForm={() => setEditReviewId(null)} />
+            )
+        }
 
         const removeReview = () => {
             dispatch(deleteReview(review.id))
         }
         return (
-            <div >
-                    <div className='review-detail'>
-                        <span>Anonymous</span>
-                        {review.liked ? <i id={`${review.liked}`} className="fas fa-thumbs-up"></i> : <i className="far fa-thumbs-up"></i>}
-                        <p>rating: {review.rating}</p>
-                        <p key={review?.id}>{review?.answer}</p>
+            <>
+                <div className='review-detail'>
+                    <span>Anonymous</span>
+                    {review.liked ? <i id={`${review.liked}`} className="fas fa-thumbs-up"></i> : <i className="far fa-thumbs-up"></i>}
+                    <p>rating: {review.rating}</p>
+                    <p key={review?.id}>{review?.answer}</p>
 
-                        {review.userId === user?.id ?
-                            (
-                                <div>
-                                    <button onClick={() => setEditReviewId(review.id)}>edit</button>
-                                    <button onClick={removeReview}>delete</button>
-                                </div>
-                            ) : ''}
-                    </div>
-            <div>
-                {editpage}
-            </div>
-        </div>
+                    {review.userId === user?.id ?
+                        (
+                            <div>
+                                <button className='edit-button' onClick={() => setEditReviewId(review.id)}>Edit</button>
+                                <button className='delete-button' onClick={removeReview}>Delete</button>
+                            </div>
+                        ) : ''}
+
+                    {EditReviewId ?
+                        <div className='show-edit-form'>
+                            {editpage}
+                        </div> : ''}
+                </div>
+            </>
         )
     }
 
@@ -98,22 +98,22 @@ const BusinessDetailPage = () => {
                     <button onClick={remove}>Delete</button>
                 </div>
             )
-                : <button onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}>Write a Review</button>}
+                : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i class="far fa-star"></i> Write a Review</button>}
 
-                <button onClick={() => !user ? history.push('/login') : ''}>add Photo</button>
+            <button className='add-photo' onClick={() => !user ? history.push('/login') : ''}><i class="fas fa-camera"></i> add Photo</button>
 
-            <div>
+            <div className='add-review__container'>
                 {content}
             </div>
 
             <h2>Reviews</h2>
-            <div>
-            {reviewArr.map(review => (
-                <div key={review.id}>
-                <ShowReview  review={review} />
-                </div>
-            ))}
-           </div>
+            <div className='review__outer-div'>
+                {reviewArr.map(review => (
+                    <div key={review.id} className='review__container'>
+                        <ShowReview review={review} hideForm={() => setShowReviewForm(false)}/>
+                    </div>
+                ))}
+            </div>
         </div >
     )
 }

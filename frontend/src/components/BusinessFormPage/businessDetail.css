@@ -22,12 +22,81 @@ html{
     opacity: 0.7;
   }
 
-#true{
-    color: rgba(255, 0, 0, 0.801);
-    padding-left: 5px;
+  .show-edit-form{
+      max-width: 580px;
+  }
+
+.add-review{
+    margin-left: 30px;
+    font: 16px Arial;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F40D15;
+    padding: 10px;
+    width: 160px;
+    height: 45px;
+    border: 1px solid #F40D15;
+    color: #fff;
+    border-radius: 3px;
+}
+.add-review:hover{
+    background-color: #df4646e7;
+    border: 1px solid #df4646e7 ;
+    cursor: pointer;
 }
 
-.review-detail{
-    box-sizing: border-box;
-    border: 1px solid ;
+.add-photo{
+    margin-left: 30px;
+    font: 16px Arial;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: rgba(43,39,60,1);
+    padding: 10px;
+    height: 45px;
+    width: 160px;
+    border: 1px solid rgba(187,186,192,1);
+    border-radius: 2px;
+}
+
+.add-photo:hover{
+    background-color: #E0E0E0;
+    cursor: pointer;
+}
+
+.edit-button{
+    font: 16px Arial;
+    font-weight: bold;
+    font-weight: none;
+    text-decoration: none;
+    background-color: #F40D15;
+    padding: 4px 10px;
+    border: 1px solid #F40D15;
+    color: #fff;
+    border-radius: 5px;
+
+}
+
+.edit-button:hover{
+    background-color: #df4646e7;
+    border: 1px solid #df4646e7 ;
+    cursor: pointer;
+}
+.delete-button{
+    margin-left: 30px;
+    font: 16px Arial;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    color: rgba(43,39,60,1);
+    padding: 4px 7px;
+    border: 1px solid rgba(187,186,192,1);
+    border-radius: 5px;
+}
+
+.delete-button:hover{
+    background-color: #E0E0E0;
+    cursor: pointer;
 }
