@@ -24,8 +24,8 @@ const BusinessEditPage = () => {
         const [imgUrl, setImgUrl] = useState(business.imgUrl);
         const [description, setDescription] = useState(business.description);
         const [address, setAddress] = useState(business.address);
-        const [city, setCity] = useState(business?.city);
-        const [state, setState] = useState(business?.state);
+        const [city, setCity] = useState(business.city);
+        const [state, setState] = useState(business.state);
         const [zipCode, setZipCode] = useState(business.zipCode);
         const [errors, setErrors] = useState([]);
 
@@ -140,7 +140,7 @@ const BusinessEditPage = () => {
                                     className='address-dropdown'
                                 onChange={e => setCity(e.target.value)}
                                 >
-                                    {cityArr.map(city => <option value={city} key={city}>{city}</option>)}
+                                    {cityArr.map(el => <option value={el} key={el}>{el}</option>)}
                                 </select>
                             </label>
                         </div>
@@ -151,11 +151,11 @@ const BusinessEditPage = () => {
                                 <select
                                     className='address-dropdown'
                                     value={state}
-                                onChange={e => setState(e.target.value)}
-                                >
-                                    {stateArr.map(state => <option value={state} key={state}>{state}</option>)}
+                                    onChange={e => setState(e.target.value)}
+                                    >
+                                    {stateArr.map(stateEle => <option key={stateEle}>{stateEle}</option>)}
                                 </select>
-                            </label>
+                                </label>
                         </div>
                         <div className='business-input__container'>
                             <label htmlFor='zipCode'>

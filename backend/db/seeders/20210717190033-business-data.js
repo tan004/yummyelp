@@ -19,8 +19,8 @@ module.exports = {
         Mumu Hot Pot offers a kind dining experience unlike anywhere else.`,
 
         address: '1099 foster square ln',
-        city: 'foster city',
-        state: 'ca',
+        city: 'Foster City',
+        state: 'California',
         zipCode: '94404',
         },
         {
@@ -30,7 +30,7 @@ module.exports = {
         description: `Mokutanya is a yakitori charcoal grill and ramen restaurant. From the moment you step into Mokutanya, our bubbly, cheerful hostess and friendly, attentive wait staff will instantly make you feel at ease and welcomed. At Mokutanya, we just don't want to treat you as a customer. We want to treat everyone as good friends where they can be frank with us and share their opinions. We listen to our friends, accept their suggestions and continuously strive on making improvement to make them happy. All we request is for you to kick back to enjoy everything we have to offer.`,
         address: '1155 California Dr ste G',
         city: 'Burlingame',
-        state: 'ca',
+        state: 'California',
         zipCode: '94010',
         },
         {
@@ -40,7 +40,7 @@ module.exports = {
         description: 'Come try our authentic Chongqing Hotpot. In Liuyishou, you can always find a broth that fit you and the spicniness that you dream of!',
         address: '98 E 3rd ave',
         city: 'San Mateo',
-        state: 'ca',
+        state: 'California',
         zipCode: '94401',
       },
         {
@@ -50,8 +50,8 @@ module.exports = {
         description: `We are offering AYCE(ALL YOU CAN EAT) hotpot with only $29.98 per person.
          If you are looking for a place where you can drink and have fun with friends. Boiling hotpot is a good fit for you!`,
         address: '5512 geary blvd',
-        city: 'san francisco',
-        state: 'ca',
+        city: 'San Francisco',
+        state: 'California',
         zipCode: '94121',
         },
 
@@ -63,7 +63,7 @@ module.exports = {
         premium short grains.tossed seaweed,original mix blend soysauce,aging ponzu and A5 wagyu.`,
         address: '279 Baldwin Ave',
         city: 'San Mateo',
-        state: 'ca',
+        state: 'California',
         zipCode: '94401',
         },
         {
@@ -74,7 +74,7 @@ module.exports = {
          We will open back for dine-in on June 15th 2020. Thanks for your supporting! `,
         address: '428 E 3rd Ave',
         city: 'San Mateo',
-        state: 'ca',
+        state: 'California',
         zipCode: '94401',
         },
         {
@@ -84,7 +84,7 @@ module.exports = {
         description: `Churrasco (shoo - ras - ko) has been a culinary tradition for more than three centuries in Rio Grande do Sul (Southern Brazil). In the olden days, "Gauchos" (Southern Brazilian Cowboys) pierced large pieces of meat and slowly roasted them over open flamed pits, while talking about their adventures on the plains. At Espetus Churrascaria, we have kept the Gaucho tradition alive. Prime cuts of meat are prepared over an open flame and served as they have been for centuries, preserving the individual taste of each tender cut. In November of 2008, Espetus opened its first sister restaurant in downtown San Mateo, bringing the Peninsula the authentic Southern Brazilian "churrascaria" experience.`,
         address: '710 S B st',
         city: 'San Mateo',
-        state: 'ca',
+        state: 'California',
         zipCode: '94401',
         },
         {
@@ -94,7 +94,7 @@ module.exports = {
         description: `Seafood, Cajun / Creole, Californian Fusion. We are OPEN for Outdoor Dining, Takeout & Delivery. Please visit our website "www.cfoodcrush.com" to place Online Orders, make Reservations and for most up to date information. Thank you for your support!`,
         address: '251 South B st',
         city: 'San Mateo',
-        state: 'ca',
+        state: 'California',
         zipCode: '94401',
         },
         {
@@ -106,7 +106,7 @@ module.exports = {
         home grilling kit now on sale.`,
         address: '1610 El Camino Real',
         city: 'San Bruno',
-        state: 'ca',
+        state: 'California',
         zipCode: '94066',
         },
         {
@@ -116,7 +116,7 @@ module.exports = {
         description: `Michelin recommended Z & Y Restaurant located in San Francisco Chinatown. Let's enjoy our popular Spicy Fish Fillet in Flaming Chili Oil, Tea Smoked Duck, Sliced Pork w/ Spicy Garlic Sauce, Beef Pancake when you dine outside or inside! Enjoy delicious, freshly made dishes from award-winning Z & Y Restaurant. Cheers! About Z & Y Restaurant: - Award-winning restaurant: Michelin Bib Gourmand, San Francisco Chronicle's Top 100 Bay Area Restaurant. - Recommended by influencers from the San Francisco Bay Area. - Chef Han was the executive chef at San Francisco's Consulate General of the People's Republic of China, and served several Presidents and dignitaries.`,
         address: '655 Jackson st',
         city: 'San Francisco',
-        state: 'ca',
+        state: 'California',
         zipCode: '94133',
         },
       ], {});

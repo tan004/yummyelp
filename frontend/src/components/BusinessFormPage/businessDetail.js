@@ -6,7 +6,6 @@ import { deleteReview, getReviews } from "../../store/review";
 import ReviewFormPage from "../ReviewFormPage";
 import ReviewEditPage from "../ReviewEditPage";
 import './businessDetail.css';
-import generateStars from "./generateStars";
 
 const BusinessDetailPage = () => {
     const user = useSelector(state => state.session.user)
@@ -153,7 +152,7 @@ const BusinessDetailPage = () => {
                 )
                     : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i id='white-star' className="far fa-star"></i> Write a Review</button>}
 
-                <button className='add-photo' onClick={() => !user ? history.push('/login') : ''}><i className="fas fa-camera"></i> add Photo</button>
+                <button className='add-photo' onClick={() => alert('Sorry, Add Photo function is still under-contruction. Please check it out later!')}><i className="fas fa-camera"></i> Add Photo</button>
             </div>
             <div className='add-review__container'>
                 {content}
