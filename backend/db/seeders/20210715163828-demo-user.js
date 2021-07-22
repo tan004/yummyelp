@@ -27,7 +27,31 @@ module.exports = {
           username: 'demo2',
           hashedPassword: bcrypt.hashSync('password'),
         },
-
+        {
+          email: 'yvonne@gmail.com',
+          username: 'Yvonne',
+          hashedPassword: bcrypt.hashSync('password'),
+        },
+        {
+          email: 'orlandoM@gmail.com',
+          username: 'Orlando',
+          hashedPassword: bcrypt.hashSync('password'),
+        },
+        {
+          email: 'chenaN@gmail.com',
+          username: 'Chena',
+          hashedPassword: bcrypt.hashSync('password'),
+        },
+        {
+          email: 'KristinN@gmail.com',
+          username: 'Kristin',
+          hashedPassword: bcrypt.hashSync('password'),
+        },
+        {
+          email: 'reinalee@gmail.com',
+          username: 'Reina',
+          hashedPassword: bcrypt.hashSync('password'),
+        },
       ], {});
   },
   down: (queryInterface, Sequelize) => {
