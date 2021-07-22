@@ -32,7 +32,7 @@ const Homepage = () => {
                     <div key={business.id} className='business-list'>
                         <NavLink to={`/business/${business.id}`}>
                             <div className='cover-img'>
-                                <img src={business.imgUrl? business.imgUrl : 'https://www.pngall.com/wp-content/uploads/2/Question-Mark-PNG-Download-Image.png' } alt={`img-${business.id}`} />
+                                <img src={business.imgUrl} alt={`img-${business.id}`} />
                             </div>
                             <div id='home-title'>
                                 <h2>{business.title}</h2>
