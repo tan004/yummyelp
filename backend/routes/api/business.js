@@ -34,10 +34,11 @@ const validateform = [
 
     check('zipCode')
         .exists({ checkFalsy: true })
+        .withMessage('Please provide the valid zipCode where your business located at!')
         .isLength({
             max: 6
         })
-        .withMessage('Please provide the valid zipCode where your business located at!'),
+        .withMessage('Please provide less than 6 digits zipCode!'),
     handleValidationErrors
 ]
 
