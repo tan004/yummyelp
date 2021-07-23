@@ -73,8 +73,8 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.post('/', restoreUser, requireAuth, validateform, asyncHandler(async (req, res,next) => {
 
-    const { ownerId, title, imgUrl, description, address, city, state, zipCode } = req.body;
     try{
+    const { ownerId, title, imgUrl, description, address, city, state, zipCode } = req.body;
         const business = await Business.create({
             ownerId,
             title, imgUrl, description, address, city, state, zipCode,
@@ -98,6 +98,7 @@ router.put('/:id/edit', restoreUser, requireAuth, validateform, asyncHandler(asy
         }
         const updatedBusiness = await business.update(updated)
         //    const updated =  await Business.update(businessId, req.body)
+
         return res.json(updatedBusiness);
     }catch(err){
         next(err)
