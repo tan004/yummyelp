@@ -62,11 +62,11 @@ const Signup =() =>{
     return (
         <div className='form__container'>
            <div className='login-form__container'>
-            <h1 className='header'>Signup for Yummylep</h1>
+            <h1 className='header'>Signup for Yummyelp</h1>
             <div className='errors__container'>
-                <ul>
-                    {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                <div className='all-errors'>
+                    {errors && errors.map((error, idx) => <p className='error-text' key={idx}><i className="fas fa-exclamation-circle"></i>{error}</p>)}
+                </div>
             </div>
             <form onSubmit={handleForm}>
                 <div className='input__container'>

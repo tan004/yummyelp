@@ -11,24 +11,25 @@ const Navigation = ({ isLoaded }) => {
     if (user) {
         sessionLinks = (
             <ProfileButton user={user} />
-        )
-    } else {
-        sessionLinks = (<>
+            )
+        } else {
+            sessionLinks = (<>
             <NavLink className='login' to="/login">Log In</NavLink>
             <NavLink className='signup' to="/signup">Sign Up</NavLink>
         </>)
     }
 
+
     return (
         <>
             <div className="navbar__container">
                 <div className='navbar-left__container'>
-                    <NavLink  exact to="/">Yummyelp</NavLink>
+                    <NavLink exact to="/">Yummyelp</NavLink>
                 </div>
 
                 <div className='search-div'>
-                    <input className='search-bar' type='text' placeholder='search bar under-construction'/>
-                    <button className='search-button'>search</button>
+                    <input className='search-bar' type='text' placeholder='search bar under-construction' />
+                    <button  className='search-button'>search</button>
                 </div>
 
                 <div className='navbar-right__container'>

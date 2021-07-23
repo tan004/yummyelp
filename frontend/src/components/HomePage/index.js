@@ -24,8 +24,10 @@ const Homepage = () => {
     }, [dispatch])
 
 
+
+
     return (
-        <div >
+        <div>
             <div className='allbusiness'>
                 {Object.values(allBusiness).map((business) =>
                 (

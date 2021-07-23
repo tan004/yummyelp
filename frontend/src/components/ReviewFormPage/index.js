@@ -46,9 +46,9 @@ const ReviewFormPage = ({ hideForm }) => {
     return (
         <div className='edit-review__container'>
             <div className='errors__container'>
-                <ul>
-                    {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                <div className='all-errors'>
+                    {errors && errors.map((error, idx) => <p className='error-text' key={idx}><i className="fas fa-exclamation-circle"></i>{error}</p>)}
+                </div>
             </div>
             <div className='form_div' >
                 <form className='review-form' onSubmit={handleForm}>

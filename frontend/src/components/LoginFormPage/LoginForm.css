@@ -33,6 +33,18 @@
     color: red;
 }
 
+.fa-exclamation-circle{
+    margin-right: 10px;
+    color: red;
+}
+.all-errors{
+
+}
+
+.error-text{
+color: black
+}
+
 .input__container{
     padding: 5px;
     display: flex;
