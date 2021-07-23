@@ -152,7 +152,7 @@ module.exports = {
           businessId: 8,
           rating: 2,
           answer: `Sadly, this place was a miss for us. Okay option to have nearby, but nowhere near as good as Boiling Crab or The Boil in NYC. The sauce is so thin and runny that it's essentially a soup. Flavor was lacking, and the shrimp was overcooked. I'm really confused about why this place is so highly rated or popular. I'd rather go through the trouble of cooking at home than eat here again.`,
-          liked: true,
+          liked: false,
         },
         {
           userId: 5,
