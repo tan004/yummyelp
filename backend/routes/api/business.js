@@ -71,39 +71,49 @@ router.get('/', asyncHandler(async (req, res) => {
     return res.json(allBusiness);
 }))
 
-router.post('/', restoreUser, requireAuth, validateform, asyncHandler(async (req, res) => {
+router.post('/', restoreUser, requireAuth, validateform, asyncHandler(async (req, res,next) => {
 
     const { ownerId, title, imgUrl, description, address, city, state, zipCode } = req.body;
-
-    const business = await Business.create({
-        ownerId,
-        title, imgUrl, description, address, city, state, zipCode,
-    })
-
-    return res.json(business);
-}))
-
-router.put('/:id/edit', restoreUser, requireAuth, validateform, asyncHandler(async (req, res) => {
-    const businessId = req.params.id
-
-    const business = await Business.findByPk(businessId)
-
-    const { ownerId, title, imgUrl, description, address, city, state, zipCode } = req.body
-
-    const updated = {
-        ownerId, title, imgUrl, description, address, city, state, zipCode
+    try{
+        const business = await Business.create({
+            ownerId,
+            title, imgUrl, description, address, city, state, zipCode,
+        })
+        return res.json(business);
+    }catch(err){
+        next(err)
     }
-    const updatedBusiness = await business.update(updated)
-    //    const updated =  await Business.update(businessId, req.body)
-    return res.json(updatedBusiness);
 }))
 
-router.delete('/:id', restoreUser, requireAuth, asyncHandler(async (req, res) => {
-    const businessId = req.params.id;
-    const business = await Business.findByPk(businessId);
-    await business.destroy();
+router.put('/:id/edit', restoreUser, requireAuth, validateform, asyncHandler(async (req, res, next) => {
+    try{
+        const businessId = req.params.id
 
-    return res.json(business.id);
+        const business = await Business.findByPk(businessId)
+
+        const { ownerId, title, imgUrl, description, address, city, state, zipCode } = req.body
+
+        const updated = {
+            ownerId, title, imgUrl, description, address, city, state, zipCode
+        }
+        const updatedBusiness = await business.update(updated)
+        //    const updated =  await Business.update(businessId, req.body)
+        return res.json(updatedBusiness);
+    }catch(err){
+        next(err)
+    }
+}))
+
+router.delete('/:id', restoreUser, requireAuth, asyncHandler(async (req, res,next) => {
+    try{
+        const businessId = req.params.id;
+        const business = await Business.findByPk(businessId);
+        await business.destroy();
+
+        return res.json(business.id);
+    }catch(err){
+        next(err)
+    }
 }))
 
 router.get('/:id', restoreUser, asyncHandler(async (req, res) => {
@@ -122,13 +132,19 @@ router.get('/:id/reviews', asyncHandler(async (req, res) => {
     return res.json(reviews)
 }))
 
-router.post('/:id/reviews', restoreUser, requireAuth, validateReview, asyncHandler(async (req, res) => {
-    const { userId, businessId, rating, answer, liked } = req.body
+router.post('/:id/reviews', restoreUser, requireAuth, validateReview, asyncHandler(async (req, res,next) => {
+    try{
 
-    const newReview = await Review.create({
-        userId, businessId, rating, answer, liked
-    })
-    return res.json(newReview)
+        const { userId, businessId, rating, answer, liked } = req.body
+
+        const newReview = await Review.create({
+            userId, businessId, rating, answer, liked
+        })
+
+        return res.json(newReview)
+    }catch(err){
+        next(err)
+    }
 }))
 
 

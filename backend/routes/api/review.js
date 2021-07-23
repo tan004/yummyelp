@@ -8,6 +8,7 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { User, Business, Review } = require('../../db/models');
 
 
+
 const validateReview = [
     check('rating')
         .exists({ checkFalsy: true })
@@ -28,25 +29,33 @@ router.get('/', asyncHandler(async(req,res)=>{
     return res.json(reviews)
 }))
 
-router.put('/:reviewId', restoreUser, requireAuth, validateReview, asyncHandler(async(req,res)=> {
-    const reviewId = req.params.reviewId;
+router.put('/:reviewId', restoreUser, requireAuth, validateReview, asyncHandler(async(req,res,next)=> {
+  try{
+      const reviewId = req.params.reviewId;
 
-    const review = await Review.findByPk(reviewId)
+      const review = await Review.findByPk(reviewId)
 
-    const { userId, businessId, rating, answer, liked } = req.body
+      const { userId, businessId, rating, answer, liked } = req.body
 
-    const updated = { userId, businessId, rating, answer, liked  };
+      const updated = { userId, businessId, rating, answer, liked  };
 
-    const updatedReview = await review.update(updated)
-    return res.json(updatedReview);
+      const updatedReview = await review.update(updated)
+      return res.json(updatedReview);
+  }catch(err){
+      next(err)
+  }
 }))
 
-router.delete('/:reviewId', restoreUser,requireAuth, asyncHandler(async(req,res)=> {
-    const reviewId = req.params.reviewId;
-    const review = await Review.findByPk(reviewId)
-    await review.destroy();
+router.delete('/:reviewId', restoreUser,requireAuth, asyncHandler(async(req,res,next)=> {3
+    try{
+        const reviewId = req.params.reviewId;
+        const review = await Review.findByPk(reviewId)
+        await review.destroy();
 
-    return res.json(review.id)
+        return res.json(review.id)
+    }catch(err){
+        next(err)
+    }
 }))
 
 module.exports = router;
