@@ -1,5 +1,5 @@
 # Yummyelp
-live link: https://yummyelp.herokuapp.com/
+live link: https://yummyelp.herokuapp.com/  
 This is a solo react-redux project to test my knowledage on what I have learned so far.
 The website is a clone of yelp, but only focus on restaurants.
 
