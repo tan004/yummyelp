@@ -19,10 +19,10 @@ a{
     background-color: black;
     height: 500px;
     max-width: 1000px;
-    min-width: 800px;
 }
 
 .business-info{
+    max-width: 932px;
     width: 80%;
     margin: 10px;
     padding: 10px;
@@ -57,7 +57,6 @@ a{
     margin: 0px;
 }
 .detail-h1{
-
     position: absolute;
     bottom: 30px;
     left: 40px;
@@ -65,7 +64,10 @@ a{
     color: #fff;
     font-weight: 900;
 }
-.detail-title img {
+
+
+
+.huge-img{
     max-width: 1000px;
     width: 100%;
     height: 100%;
@@ -86,6 +88,7 @@ a{
     background-color: #F40D15;
     padding: 10px;
     width: 160px;
+    min-width: 160px;
     height: 45px;
     border: 1px solid #F40D15;
     color: #fff;
@@ -98,7 +101,7 @@ a{
 }
 
 .add-photo{
-
+    min-width: 160px;
     margin-left: 30px;
     font: 16px Arial;
     font-weight: bold;
@@ -156,9 +159,11 @@ a{
 
 .review__outer-div{
     width: 80%;
+    max-width: 932px;
 }
 
 .detail-owner-div{
+    max-width: 932px;
     display: flex;
     margin: 10px 10px;
     padding: 10px 10px 20px;
@@ -171,6 +176,7 @@ a{
     width: 80%;
     margin: 10px;
     padding: 10px;
+    max-width: 932px;
 }
 
 .no-review{
