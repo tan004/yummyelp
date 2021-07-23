@@ -14,7 +14,7 @@ const validateform = [
 
     check('imgUrl')
         .exists({ checkFalsy: true })
-        .withMessage('Please provide your cover picture Url!'),
+        .withMessage('Please provide your cover image Url!'),
 
     check('description')
         .exists({ checkFalsy: true })
