@@ -2,6 +2,11 @@
 This is a solo react-redux project to test my knowledage on what I have learned so far.
 The website is a clone of yelp, but only focus on restaurants.
 
+## Please check out the feature list for two main features:
+## [Feature List](https://github.com/tan004/yummyelp/wiki/Feature-List)
+
+## [Database Schema ](https://github.com/tan004/yummyelp/wiki/Database-Schema)
+
 ## Steps to run this application locally:
 1. clone this repo
 2. cd to the backend folder and run `npm install` to install all the needed dependencies.

@@ -39,6 +39,7 @@ const validateform = [
             max: 6
         })
         .withMessage('Please provide less than 6 digits zipCode!'),
+
     handleValidationErrors
 ]
 
