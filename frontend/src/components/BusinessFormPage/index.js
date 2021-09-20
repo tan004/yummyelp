@@ -168,7 +168,7 @@ const BusinessFormPage = () => {
                     </div>
 
                     <div className='submit-button__container'>
-                        <button className='business-submit-button' tyep='submit'>Create</button>
+                        <button className='business-submit-button' type='submit'>Create</button>
                     </div>
                 </form>
             </div>

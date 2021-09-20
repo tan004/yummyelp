@@ -55,6 +55,7 @@ const BusinessDetailPage = () => {
                 <ReviewEditPage reviewId={EditReviewId} hideForm={() => setEditReviewId(null)} />
             )
         }
+        
         let starNum = parseFloat(review.rating);
 
         let stars = null;
