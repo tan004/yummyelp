@@ -1,5 +1,6 @@
 .navbar__container{
-    min-width: 1166px;
+    min-width: 626px;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
@@ -103,7 +104,7 @@
     box-sizing: border-box;
     padding: 5px 10px;
     border-radius: 5px;
-
+    margin-left: 5px;
 }
 
 .about-me{
