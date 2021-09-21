@@ -8,5 +8,5 @@ The website is a clone of yelp, but only focus on restaurants.
 
 ## [Database Schema ](https://github.com/tan004/yummyelp/wiki/Database-Schema)
 
-## Home Page
+### Home Page
 ![home page](https://i.imgur.com/uBD2pe8.png)
