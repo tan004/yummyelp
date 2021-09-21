@@ -10,3 +10,6 @@ The website is a clone of yelp, but only focus on restaurants.
 
 ## Home Page
 ![home page](https://i.imgur.com/uBD2pe8.png)
+
+## Business Page
+![home page](https://i.imgur.com/1euKIMg.png)
