@@ -41,7 +41,6 @@ export const getOneBusiness = (id) => async dispatch => {
 
     if (req.ok) {
         const business = await req.json();
-
         dispatch(add(business))
     }
 }
@@ -76,7 +75,7 @@ export const createBusiness = (form) => async dispatch => {
     if (req.ok) {
         dispatch(add(newBusiness))
     }
-    return req;
+    return newBusiness;
 }
 
 
@@ -122,6 +121,7 @@ const businessReducer = (state = initialState, action) => {
             }
         }
         case ADD: {
+
             const newState = {...state, [action.business.id]:action.business}
             return newState;
         }

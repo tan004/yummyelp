@@ -95,7 +95,7 @@ const reviewsReducer = (state= initialState, action) => {
     switch (action.type) {
         case LOAD_REVIEWS: {
             const allReviews = {};
-
+            console.log(action.reviews)
             const selected = action.reviews.filter(review => review.businessId === action.businessId);
 
             // allReviews= {...selected}

@@ -49,6 +49,7 @@ const BusinessDetailPage = () => {
             return () => null;
         }, [])
 
+
         let editpage = null;
 
         if (EditReviewId) {
@@ -95,7 +96,7 @@ const BusinessDetailPage = () => {
             <>
                 <div className='review-detail'>
                     <div className='review-name__container'>
-                        <p className='review-name'>Anonymous User:</p>
+                        <p className='review-name'>{review.User?.username}</p>
                     <span>
                         {review.liked ? <i id={`${review.liked}`} className="fas fa-thumbs-up"></i> : <i className="far no-liked fa-thumbs-up"></i>}
                     </span>
@@ -155,7 +156,7 @@ const BusinessDetailPage = () => {
                 )
                     : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i id='white-star' className="far fa-star"></i> Write a Review</button>}
 
-                <button className='add-photo' onClick={() => alert('Sorry, Add Photo function is still under-contruction. Please check it out later!')}><i className="fas fa-camera"></i> Add Photo</button>
+                {/* <button className='add-photo' onClick={() => alert('Sorry, Add Photo function is still under-contruction. Please check it out later!')}><i className="fas fa-camera"></i> Add Photo</button> */}
             </div>
             <div className='add-review__container'>
                 {content}

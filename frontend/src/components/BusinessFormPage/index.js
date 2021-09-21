@@ -22,29 +22,29 @@ const BusinessFormPage = () => {
     // const [lat, setLat] = useState(0);
     // const [lng,setLng] = useState(0);
 
-    useEffect(() => {
-        const validator = []
-        if (!title) {
-            validator.push('Please provide a name for your business.')
-        }
-        if (title.length < 3 || title.lenght > 100) {
-            validator.push('Please provide your business name with length between 3 to 100 characters.')
-        }
-        if (!address) {
-            validator.push('Please provide your address.')
-        }
-        if (!city) {
-            validator.push('Please provide a value the city.')
-        }
-        if (!state) {
-            validator.push('Please provide a value for the state')
-        }
-        if (!imgUrl) {
-            validator.push('Please provide a image Url for your business cover picture!')
-        }
-        setErrors(validator)
-        return () => setErrors('')
-    }, [title, address, city, state, imgUrl])
+    // useEffect(() => {
+    //     const validator = []
+    //     if (!title) {
+    //         validator.push('Please provide a name for your business.')
+    //     }
+    //     if (title.length < 3 || title.lenght > 100) {
+    //         validator.push('Please provide your business name with length between 3 to 100 characters.')
+    //     }
+    //     if (!address) {
+    //         validator.push('Please provide your address.')
+    //     }
+    //     if (!city) {
+    //         validator.push('Please provide a value the city.')
+    //     }
+    //     if (!state) {
+    //         validator.push('Please provide a value for the state')
+    //     }
+    //     if (!imgUrl) {
+    //         validator.push('Please provide a image Url for your business cover picture!')
+    //     }
+    //     setErrors(validator)
+    //     return () => setErrors('')
+    // }, [title, address, city, state, imgUrl])
 
 
 
@@ -69,7 +69,7 @@ const BusinessFormPage = () => {
         try {
             let newBusiness = await dispacth(createBusiness(business));
             if (newBusiness) {
-                history.push('/')
+                history.push(`/business/${newBusiness.id}`)
             }
         } catch (err) {
             let data = await err.json();
