@@ -49,6 +49,7 @@ const BusinessDetailPage = () => {
             return () => null;
         }, [])
 
+
         let editpage = null;
 
         if (EditReviewId) {
@@ -95,7 +96,7 @@ const BusinessDetailPage = () => {
             <>
                 <div className='review-detail'>
                     <div className='review-name__container'>
-                        <p className='review-name'>Anonymous User:</p>
+                        <p className='review-name'>{review.User?.username}</p>
                     <span>
                         {review.liked ? <i id={`${review.liked}`} className="fas fa-thumbs-up"></i> : <i className="far no-liked fa-thumbs-up"></i>}
                     </span>
