@@ -155,7 +155,7 @@ const BusinessDetailPage = () => {
                 )
                     : <button className='add-review' onClick={() => !user ? history.push('/login') : setShowReviewForm(true)}><i id='white-star' className="far fa-star"></i> Write a Review</button>}
 
-                <button className='add-photo' onClick={() => alert('Sorry, Add Photo function is still under-contruction. Please check it out later!')}><i className="fas fa-camera"></i> Add Photo</button>
+                {/* <button className='add-photo' onClick={() => alert('Sorry, Add Photo function is still under-contruction. Please check it out later!')}><i className="fas fa-camera"></i> Add Photo</button> */}
             </div>
             <div className='add-review__container'>
                 {content}
