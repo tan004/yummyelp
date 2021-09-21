@@ -11,7 +11,11 @@ The website is a clone of yelp, but only focus on restaurants.
 - Express: A fast, unopinionated, minimalist web framework for Node.js
 - PostgreSQL: Relational Database
 
-## Please check out the LINKS below for feature list and database schema:
+## Available Features
+- Business (CRUD)
+- Reviews (CRUD)
+
+## Please check out the LINKS below for the full feature list and database schema:
 ### [Feature List](https://github.com/tan004/yummyelp/wiki/Feature-List)
 
 ### [Database Schema ](https://github.com/tan004/yummyelp/wiki/Database-Schema)
