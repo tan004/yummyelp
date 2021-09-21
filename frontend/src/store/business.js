@@ -76,7 +76,7 @@ export const createBusiness = (form) => async dispatch => {
     if (req.ok) {
         dispatch(add(newBusiness))
     }
-    return req;
+    return newBusiness;
 }
 
 

@@ -69,7 +69,7 @@ const BusinessFormPage = () => {
         try {
             let newBusiness = await dispacth(createBusiness(business));
             if (newBusiness) {
-                history.push('/')
+                history.push(`/business/${newBusiness.id}`)
             }
         } catch (err) {
             let data = await err.json();
