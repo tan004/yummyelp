@@ -24,6 +24,7 @@ const validateReview = [
 
 router.get('/', asyncHandler(async(req,res)=>{
     const reviews  = await Review.findAll({
+        include: User,
         order: [['updatedAt','DESC']]
     });
     return res.json(reviews)
@@ -40,7 +41,12 @@ router.put('/:reviewId', restoreUser, requireAuth, validateReview, asyncHandler(
       const updated = { userId, businessId, rating, answer, liked  };
 
       const updatedReview = await review.update(updated)
-      return res.json(updatedReview);
+
+      const thisReview = await Review.findByPk(updatedReview.id ,{
+          include: User
+      })
+
+      return res.json(thisReview);
   }catch(err){
       next(err)
   }
