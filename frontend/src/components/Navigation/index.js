@@ -27,13 +27,12 @@ const Navigation = ({ isLoaded }) => {
                     <NavLink exact to="/">Yummyelp</NavLink>
                 </div>
 
-                <div className='search-div'>
+                {/* <div className='search-div'>
                     <input className='search-bar' type='text' placeholder='search bar under-construction' />
                     <button  className='search-button'>search</button>
-                </div>
+                </div> */}
 
                 <div className='navbar-right__container'>
-                    <a className="about-me" href='https://github.com/tan004'>About me</a>
                     <NavLink className='create' to='/business'>Create business</NavLink>
                     {isLoaded && sessionLinks}
                 </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import { useDispatch,useSelector } from "react-redux";
 import { signup } from "../../store/session";
-
+import './SignUp.css'
 
 const Signup =() =>{
 
@@ -17,15 +17,15 @@ const Signup =() =>{
     // const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
 
-    useEffect(() => {
-        const validator = []
-        if (!username) validator.push('Please provide a valid username')
-        if (!email) validator.push('Please provide a valid username')
-        if (!confirmPassword) validator.push('Please provide a valid username')
-        if (!password) validator.push('Please provide a valid password')
-        setErrors(validator)
-        return () => setErrors([]);
-    }, [username, password,email,confirmPassword])
+    // useEffect(() => {
+    //     const validator = []
+    //     if (!username) validator.push('Please provide a valid username')
+    //     if (!email) validator.push('Please provide a valid username')
+    //     if (!confirmPassword) validator.push('Please provide a valid username')
+    //     if (!password) validator.push('Please provide a valid password')
+    //     setErrors(validator)
+    //     return () => setErrors([]);
+    // }, [username, password,email,confirmPassword])
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -71,7 +71,7 @@ const Signup =() =>{
             <form onSubmit={handleForm}>
                 <div className='input__container'>
                     <label htmlFor='username'>
-                        <p>User Name: </p>
+                        <p>Username: </p>
                         <input type='text'
                             className="text-input"
                             value={username}
@@ -119,7 +119,7 @@ const Signup =() =>{
 
             </div>
             </form>
-            <small>Already have an account?<Link to='/login'>Log in</Link></small>
+            <small>Already have an account?<Link className='login-link' to='/login'>Log in</Link></small>
 
         </div>
 
