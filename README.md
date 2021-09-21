@@ -6,10 +6,11 @@ The website is a clone of yelp, but only focus on restaurants.
 ## Technologies Used
 ### Frontend
 - React: Yummyelp's frontend is based on React.
-- Vanilla CSS: for component Styling  
+- Redux: Redux store for state management and API calls.
+- Vanilla CSS: for component Styling.  
 ### Backend
-- Express: A fast, unopinionated, minimalist web framework for Node.js
-- PostgreSQL: Relational Database
+- Express: A fast, unopinionated, minimalist web framework for Node.js.
+- PostgreSQL: Relational Database.
 
 ## Available Features
 - Business (CRUD)
