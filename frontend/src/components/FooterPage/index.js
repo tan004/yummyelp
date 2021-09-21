@@ -9,6 +9,9 @@ const FooterPage = () => {
             <div>
             <a className="about-me" target='_blank' href='https://www.linkedin.com/in/zhuoxin-tan-491587172/'><i className="fab fa-linkedin"></i></a>
             </div>
+            <div>
+            <a className="about-me" target='_blank' href='https://angel.co/u/zhuoxin-tan-1'><i className="fab fa-angellist"></i></a>
+            </div>
         </div>
     )
 }
