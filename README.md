@@ -5,7 +5,7 @@ The website is a clone of yelp, but only focus on restaurants.
 
 ## Technologies Used
 ### Frontend
-- React: OpenBelly frontend is based on React.
+- React: Yummyelp's frontend is based on React.
 - Vanilla CSS: for component Styling  
 ### Backend
 - Express: A fast, unopinionated, minimalist web framework for Node.js
