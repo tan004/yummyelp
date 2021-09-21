@@ -14,13 +14,13 @@ const LoginFormPage = () => {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
 
-    useEffect(() => {
-        const validator = []
-        if (!username) validator.push('Please provide a valid username')
-        if (!password) validator.push('Please provide a valid password')
-        setErrors(validator)
-        return () => setErrors([]);
-    }, [username, password])
+    // useEffect(() => {
+    //     const validator = []
+    //     if (!username) validator.push('Please provide a valid username')
+    //     if (!password) validator.push('Please provide a valid password')
+    //     setErrors(validator)
+    //     return () => setErrors([]);
+    // }, [username, password])
 
     if (sessionUser) return (
         <Redirect to='/' />

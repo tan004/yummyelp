@@ -33,7 +33,6 @@ const Navigation = ({ isLoaded }) => {
                 </div> */}
 
                 <div className='navbar-right__container'>
-                    <a className="about-me" target='_blank' href='https://github.com/tan004'>About me</a>
                     <NavLink className='create' to='/business'>Create business</NavLink>
                     {isLoaded && sessionLinks}
                 </div>

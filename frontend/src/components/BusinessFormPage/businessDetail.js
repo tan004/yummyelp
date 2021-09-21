@@ -5,6 +5,7 @@ import { getOneBusiness, removeBusiness } from "../../store/business";
 import { deleteReview, getReviews } from "../../store/review";
 import ReviewFormPage from "../ReviewFormPage";
 import ReviewEditPage from "../ReviewEditPage";
+import FooterPage from "../FooterPage";
 import './businessDetail.css';
 
 const BusinessDetailPage = () => {
@@ -55,7 +56,7 @@ const BusinessDetailPage = () => {
                 <ReviewEditPage reviewId={EditReviewId} hideForm={() => setEditReviewId(null)} />
             )
         }
-        
+
         let starNum = parseFloat(review.rating);
 
         let stars = null;
@@ -127,6 +128,7 @@ const BusinessDetailPage = () => {
     }
 
     return (
+        <>
         <div className='detailPage'>
             <div className='detail-title'>
                 <img className='huge-img' src={business?.imgUrl} alt={`img-${business?.id}`} />
@@ -176,6 +178,8 @@ const BusinessDetailPage = () => {
                 }
             </div>
         </div >
+        <FooterPage />
+        </>
     )
 }
 

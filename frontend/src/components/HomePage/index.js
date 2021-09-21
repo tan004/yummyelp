@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-
+import FooterPage from '../FooterPage';
 import { getBusiness } from '../../store/business';
 import { getAllReviews } from '../../store/review';
 
@@ -49,6 +49,7 @@ const Homepage = () => {
                     </div>
                 ))}
             </div>
+            <FooterPage />
         </div>
     )
 }
