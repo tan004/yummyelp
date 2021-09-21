@@ -7,3 +7,5 @@ The website is a clone of yelp, but only focus on restaurants.
 ## [Feature List](https://github.com/tan004/yummyelp/wiki/Feature-List)
 
 ## [Database Schema ](https://github.com/tan004/yummyelp/wiki/Database-Schema)
+
+![home page](https://i.imgur.com/uBD2pe8.png)
