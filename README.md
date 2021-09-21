@@ -7,6 +7,9 @@ The website is a clone of yelp, but only focus on restaurants.
 ### Frontend
 - React: OpenBelly frontend is based on React.
 - Vanilla CSS: for component Styling  
+### Backend
+- Express: A fast, unopinionated, minimalist web framework for Node.js
+- PostgreSQL: Relational Database
 
 ## Please check out the LINKS below for feature list and database schema:
 ### [Feature List](https://github.com/tan004/yummyelp/wiki/Feature-List)
