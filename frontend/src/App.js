@@ -9,7 +9,6 @@ import Homepage from "./components/HomePage";
 import BusinessFormPage from "./components/BusinessFormPage";
 import BusinessDetailPage from "./components/BusinessFormPage/businessDetail.js";
 import BusinessEditPage from "./components/BusinessEditPage";
-import FooterPage from "./components/FooterPage";
 
 
 function App() {
