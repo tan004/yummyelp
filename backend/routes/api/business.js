@@ -143,8 +143,14 @@ router.post('/:id/reviews', restoreUser, requireAuth, validateReview, asyncHandl
         const newReview = await Review.create({
             userId, businessId, rating, answer, liked
         })
+        let review;
+        if(newReview.id){
+            review = await Review.findByPk(newReview.id, {
+                include: User
+            })
+        }
 
-        return res.json(newReview)
+        return res.json(review)
     }catch(err){
         next(err)
     }
