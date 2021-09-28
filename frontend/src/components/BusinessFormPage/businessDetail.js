@@ -22,10 +22,15 @@ const BusinessDetailPage = () => {
 
     const history = useHistory();
 
+    function reloadPageWithHash() {
+        window.location.replace(`${window.location.pathname}#top`)
+    }
+
     useEffect(() => {
         dispatch(getOneBusiness(id))
         dispatch(getReviews(id))
         setShowReviewForm(false)
+        reloadPageWithHash()
     }, [dispatch, id])
 
     const remove = () => {
@@ -131,7 +136,7 @@ const BusinessDetailPage = () => {
     return (
         <>
         <div className='detailPage'>
-            <div className='detail-title'>
+            <div  className='detail-title'>
                 <img className='huge-img' src={business?.imgUrl} alt={`img-${business?.id}`} />
                 <h1 className='detail-h1'>{business?.title}</h1>
             </div>

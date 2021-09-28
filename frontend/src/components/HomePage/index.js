@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FooterPage from '../FooterPage';
 import { getBusiness } from '../../store/business';
 import { getAllReviews } from '../../store/review';
@@ -31,8 +31,8 @@ const Homepage = () => {
             <div className='allbusiness'>
                 {Object.values(allBusiness).map((business) =>
                 (
-                    <div key={business.id} className='business-list'>
-                        <NavLink to={`/business/${business.id}`}>
+                    <div key={business.id} className='business-list' key={business.id}>
+                        <Link to={`/business/${business.id}`}>
                             <div className='cover-img'>
                                 <img src={business.imgUrl} alt={`img-${business.id}`} />
                             </div>
@@ -45,7 +45,7 @@ const Homepage = () => {
                                 <p><i className="fas fa-check"></i>Indoor dining<i className="fas fa-check"></i>Delivery<i className="fas fa-check"></i>Takeout</p>
                             </div>
 
-                        </NavLink>
+                        </Link>
                     </div>
                 ))}
             </div>

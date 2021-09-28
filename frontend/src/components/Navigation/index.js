@@ -22,7 +22,7 @@ const Navigation = ({ isLoaded }) => {
 
     return (
         <>
-            <div className="navbar__container">
+            <div id='top' className="navbar__container">
                 <div className='navbar-left__container'>
                     <NavLink exact to="/">Yummyelp</NavLink>
                 </div>
