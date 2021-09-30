@@ -19,3 +19,8 @@
     border-radius: 5px;
     color: black;
 }
+
+.footer-icon:hover{
+    position: relative;
+    bottom: 3px;
+}
